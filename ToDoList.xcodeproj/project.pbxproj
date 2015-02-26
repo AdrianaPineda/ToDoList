@@ -13,6 +13,25 @@
 		016CACD71A9D121C00D37729 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 016CACD61A9D121C00D37729 /* Images.xcassets */; };
 		016CACDA1A9D121C00D37729 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 016CACD81A9D121C00D37729 /* LaunchScreen.xib */; };
 		016CACE61A9D121C00D37729 /* ToDoListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016CACE51A9D121C00D37729 /* ToDoListTests.swift */; };
+		01F9F2081A9D5643000143A9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F9F2071A9D5643000143A9 /* CoreLocation.framework */; };
+		01F9F21D1A9E41B7000143A9 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F9F21C1A9E41B7000143A9 /* UserInfo.swift */; };
+		01F9F21F1A9E4343000143A9 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F9F21E1A9E4343000143A9 /* Location.swift */; };
+		01F9F2211A9E4376000143A9 /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F9F2201A9E4376000143A9 /* ListItem.swift */; };
+		01F9F2231A9E43F5000143A9 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F9F2221A9E43F5000143A9 /* MapViewController.swift */; };
+		01F9F2251A9E4487000143A9 /* ListItemsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F9F2241A9E4487000143A9 /* ListItemsTableViewController.swift */; };
+		01F9F2281A9E4E30000143A9 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F9F2271A9E4E30000143A9 /* AVFoundation.framework */; };
+		01F9F22A1A9E4E36000143A9 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F9F2291A9E4E36000143A9 /* CoreData.framework */; };
+		01F9F22C1A9E4E40000143A9 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F9F22B1A9E4E40000143A9 /* CoreText.framework */; };
+		01F9F22E1A9E4E48000143A9 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F9F22D1A9E4E48000143A9 /* GLKit.framework */; };
+		01F9F2301A9E4E51000143A9 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F9F22F1A9E4E51000143A9 /* ImageIO.framework */; };
+		01F9F2321A9E4E5E000143A9 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F9F2311A9E4E5E000143A9 /* libc++.dylib */; };
+		01F9F2341A9E4E68000143A9 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F9F2331A9E4E68000143A9 /* libicucore.dylib */; };
+		01F9F2361A9E4E74000143A9 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F9F2351A9E4E74000143A9 /* libz.dylib */; };
+		01F9F2381A9E4E7C000143A9 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F9F2371A9E4E7C000143A9 /* OpenGLES.framework */; };
+		01F9F23A1A9E4E81000143A9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F9F2391A9E4E81000143A9 /* QuartzCore.framework */; };
+		01F9F23C1A9E4E8B000143A9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F9F23B1A9E4E8B000143A9 /* SystemConfiguration.framework */; };
+		01F9F23E1A9EA7B0000143A9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F9F23D1A9EA7B0000143A9 /* MapKit.framework */; };
+		C0CE8F39E071D3B31B373AF3 /* libPods-ToDoList.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 67F630B02BCAECBE8FDEF34E /* libPods-ToDoList.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +55,28 @@
 		016CACDF1A9D121C00D37729 /* ToDoListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToDoListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		016CACE41A9D121C00D37729 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		016CACE51A9D121C00D37729 /* ToDoListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListTests.swift; sourceTree = "<group>"; };
+		01F9F2071A9D5643000143A9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		01F9F21C1A9E41B7000143A9 /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		01F9F21E1A9E4343000143A9 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		01F9F2201A9E4376000143A9 /* ListItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListItem.swift; sourceTree = "<group>"; };
+		01F9F2221A9E43F5000143A9 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		01F9F2241A9E4487000143A9 /* ListItemsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListItemsTableViewController.swift; sourceTree = "<group>"; };
+		01F9F2261A9E4A29000143A9 /* ToDoList-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ToDoList-Bridging-Header.h"; sourceTree = "<group>"; };
+		01F9F2271A9E4E30000143A9 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		01F9F2291A9E4E36000143A9 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		01F9F22B1A9E4E40000143A9 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		01F9F22D1A9E4E48000143A9 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		01F9F22F1A9E4E51000143A9 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		01F9F2311A9E4E5E000143A9 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		01F9F2331A9E4E68000143A9 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
+		01F9F2351A9E4E74000143A9 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		01F9F2371A9E4E7C000143A9 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		01F9F2391A9E4E81000143A9 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		01F9F23B1A9E4E8B000143A9 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		01F9F23D1A9EA7B0000143A9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		67F630B02BCAECBE8FDEF34E /* libPods-ToDoList.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ToDoList.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		77C157D82B4FF83CF1CA247D /* Pods-ToDoList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDoList.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ToDoList/Pods-ToDoList.debug.xcconfig"; sourceTree = "<group>"; };
+		F4B928016DF65DA97D4939F2 /* Pods-ToDoList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDoList.release.xcconfig"; path = "Pods/Target Support Files/Pods-ToDoList/Pods-ToDoList.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +84,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01F9F23E1A9EA7B0000143A9 /* MapKit.framework in Frameworks */,
+				01F9F23C1A9E4E8B000143A9 /* SystemConfiguration.framework in Frameworks */,
+				01F9F23A1A9E4E81000143A9 /* QuartzCore.framework in Frameworks */,
+				01F9F2381A9E4E7C000143A9 /* OpenGLES.framework in Frameworks */,
+				01F9F2361A9E4E74000143A9 /* libz.dylib in Frameworks */,
+				01F9F2341A9E4E68000143A9 /* libicucore.dylib in Frameworks */,
+				01F9F2321A9E4E5E000143A9 /* libc++.dylib in Frameworks */,
+				01F9F2301A9E4E51000143A9 /* ImageIO.framework in Frameworks */,
+				01F9F22E1A9E4E48000143A9 /* GLKit.framework in Frameworks */,
+				01F9F22C1A9E4E40000143A9 /* CoreText.framework in Frameworks */,
+				01F9F22A1A9E4E36000143A9 /* CoreData.framework in Frameworks */,
+				01F9F2281A9E4E30000143A9 /* AVFoundation.framework in Frameworks */,
+				01F9F2081A9D5643000143A9 /* CoreLocation.framework in Frameworks */,
+				C0CE8F39E071D3B31B373AF3 /* libPods-ToDoList.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,9 +114,13 @@
 		016CACC11A9D121C00D37729 = {
 			isa = PBXGroup;
 			children = (
+				01F9F2261A9E4A29000143A9 /* ToDoList-Bridging-Header.h */,
+				01F9F2071A9D5643000143A9 /* CoreLocation.framework */,
 				016CACCC1A9D121C00D37729 /* ToDoList */,
 				016CACE21A9D121C00D37729 /* ToDoListTests */,
 				016CACCB1A9D121C00D37729 /* Products */,
+				D682F31C0E6159A867989D2A /* Pods */,
+				34696F52C3E4ABC93004B7B5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,6 +136,8 @@
 		016CACCC1A9D121C00D37729 /* ToDoList */ = {
 			isa = PBXGroup;
 			children = (
+				01F9F21A1A9E41A3000143A9 /* Controllers */,
+				01F9F21B1A9E41A3000143A9 /* Models */,
 				016CACCF1A9D121C00D37729 /* AppDelegate.swift */,
 				016CACD11A9D121C00D37729 /* ViewController.swift */,
 				016CACD31A9D121C00D37729 /* Main.storyboard */,
@@ -112,6 +173,54 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		01F9F21A1A9E41A3000143A9 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				01F9F2221A9E43F5000143A9 /* MapViewController.swift */,
+				01F9F2241A9E4487000143A9 /* ListItemsTableViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		01F9F21B1A9E41A3000143A9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				01F9F21C1A9E41B7000143A9 /* UserInfo.swift */,
+				01F9F21E1A9E4343000143A9 /* Location.swift */,
+				01F9F2201A9E4376000143A9 /* ListItem.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		34696F52C3E4ABC93004B7B5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				01F9F23D1A9EA7B0000143A9 /* MapKit.framework */,
+				01F9F23B1A9E4E8B000143A9 /* SystemConfiguration.framework */,
+				01F9F2391A9E4E81000143A9 /* QuartzCore.framework */,
+				01F9F2371A9E4E7C000143A9 /* OpenGLES.framework */,
+				01F9F2351A9E4E74000143A9 /* libz.dylib */,
+				01F9F2331A9E4E68000143A9 /* libicucore.dylib */,
+				01F9F2311A9E4E5E000143A9 /* libc++.dylib */,
+				01F9F22F1A9E4E51000143A9 /* ImageIO.framework */,
+				01F9F22D1A9E4E48000143A9 /* GLKit.framework */,
+				01F9F22B1A9E4E40000143A9 /* CoreText.framework */,
+				01F9F2291A9E4E36000143A9 /* CoreData.framework */,
+				01F9F2271A9E4E30000143A9 /* AVFoundation.framework */,
+				67F630B02BCAECBE8FDEF34E /* libPods-ToDoList.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D682F31C0E6159A867989D2A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				77C157D82B4FF83CF1CA247D /* Pods-ToDoList.debug.xcconfig */,
+				F4B928016DF65DA97D4939F2 /* Pods-ToDoList.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -119,9 +228,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 016CACE91A9D121C00D37729 /* Build configuration list for PBXNativeTarget "ToDoList" */;
 			buildPhases = (
+				FE7BADD3F0507A06E5C74E09 /* Check Pods Manifest.lock */,
 				016CACC61A9D121C00D37729 /* Sources */,
 				016CACC71A9D121C00D37729 /* Frameworks */,
 				016CACC81A9D121C00D37729 /* Resources */,
+				B4587552D9ED060433809DAC /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -161,6 +272,7 @@
 				TargetAttributes = {
 					016CACC91A9D121C00D37729 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = 9EVH78F4V4;
 					};
 					016CACDE1A9D121C00D37729 = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -207,12 +319,50 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		B4587552D9ED060433809DAC /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ToDoList/Pods-ToDoList-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FE7BADD3F0507A06E5C74E09 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		016CACC61A9D121C00D37729 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01F9F2211A9E4376000143A9 /* ListItem.swift in Sources */,
+				01F9F2231A9E43F5000143A9 /* MapViewController.swift in Sources */,
 				016CACD21A9D121C00D37729 /* ViewController.swift in Sources */,
+				01F9F21D1A9E41B7000143A9 /* UserInfo.swift in Sources */,
+				01F9F21F1A9E4343000143A9 /* Location.swift in Sources */,
+				01F9F2251A9E4487000143A9 /* ListItemsTableViewController.swift in Sources */,
 				016CACD01A9D121C00D37729 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -336,21 +486,31 @@
 		};
 		016CACEA1A9D121C00D37729 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 77C157D82B4FF83CF1CA247D /* Pods-ToDoList.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ToDoList/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/apineda/Documents/Twilio/Application/ToDoList/ToDoList-Bridging-Header.h";
 			};
 			name = Debug;
 		};
 		016CACEB1A9D121C00D37729 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4B928016DF65DA97D4939F2 /* Pods-ToDoList.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ToDoList/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/apineda/Documents/Twilio/Application/ToDoList/ToDoList-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -407,6 +567,7 @@
 				016CACEB1A9D121C00D37729 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		016CACEC1A9D121C00D37729 /* Build configuration list for PBXNativeTarget "ToDoListTests" */ = {
 			isa = XCConfigurationList;
@@ -415,6 +576,7 @@
 				016CACEE1A9D121C00D37729 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
