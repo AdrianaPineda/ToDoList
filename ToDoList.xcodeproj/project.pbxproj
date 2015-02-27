@@ -31,6 +31,9 @@
 		01F9F23A1A9E4E81000143A9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F9F2391A9E4E81000143A9 /* QuartzCore.framework */; };
 		01F9F23C1A9E4E8B000143A9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F9F23B1A9E4E8B000143A9 /* SystemConfiguration.framework */; };
 		01F9F23E1A9EA7B0000143A9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F9F23D1A9EA7B0000143A9 /* MapKit.framework */; };
+		01F9F2401A9F922A000143A9 /* CenterAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F9F23F1A9F922A000143A9 /* CenterAnnotationView.swift */; };
+		01F9F2451A9FEE6D000143A9 /* location_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 01F9F2441A9FEE6D000143A9 /* location_icon.png */; };
+		01F9F2471A9FF415000143A9 /* UserLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F9F2461A9FF415000143A9 /* UserLocationManager.swift */; };
 		C0CE8F39E071D3B31B373AF3 /* libPods-ToDoList.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 67F630B02BCAECBE8FDEF34E /* libPods-ToDoList.a */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +77,9 @@
 		01F9F2391A9E4E81000143A9 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		01F9F23B1A9E4E8B000143A9 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		01F9F23D1A9EA7B0000143A9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		01F9F23F1A9F922A000143A9 /* CenterAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CenterAnnotationView.swift; sourceTree = "<group>"; };
+		01F9F2441A9FEE6D000143A9 /* location_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = location_icon.png; sourceTree = "<group>"; };
+		01F9F2461A9FF415000143A9 /* UserLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLocationManager.swift; sourceTree = "<group>"; };
 		67F630B02BCAECBE8FDEF34E /* libPods-ToDoList.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ToDoList.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		77C157D82B4FF83CF1CA247D /* Pods-ToDoList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDoList.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ToDoList/Pods-ToDoList.debug.xcconfig"; sourceTree = "<group>"; };
 		F4B928016DF65DA97D4939F2 /* Pods-ToDoList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDoList.release.xcconfig"; path = "Pods/Target Support Files/Pods-ToDoList/Pods-ToDoList.release.xcconfig"; sourceTree = "<group>"; };
@@ -143,6 +149,7 @@
 				016CACD31A9D121C00D37729 /* Main.storyboard */,
 				016CACD61A9D121C00D37729 /* Images.xcassets */,
 				016CACD81A9D121C00D37729 /* LaunchScreen.xib */,
+				01F9F2431A9FEE6D000143A9 /* Resources */,
 				016CACCD1A9D121C00D37729 /* Supporting Files */,
 			);
 			path = ToDoList;
@@ -178,6 +185,8 @@
 			children = (
 				01F9F2221A9E43F5000143A9 /* MapViewController.swift */,
 				01F9F2241A9E4487000143A9 /* ListItemsTableViewController.swift */,
+				01F9F23F1A9F922A000143A9 /* CenterAnnotationView.swift */,
+				01F9F2461A9FF415000143A9 /* UserLocationManager.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -190,6 +199,15 @@
 				01F9F2201A9E4376000143A9 /* ListItem.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		01F9F2431A9FEE6D000143A9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				01F9F2441A9FEE6D000143A9 /* location_icon.png */,
+			);
+			name = Resources;
+			path = ../Resources;
 			sourceTree = "<group>";
 		};
 		34696F52C3E4ABC93004B7B5 /* Frameworks */ = {
@@ -305,6 +323,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				016CACD51A9D121C00D37729 /* Main.storyboard in Resources */,
+				01F9F2451A9FEE6D000143A9 /* location_icon.png in Resources */,
 				016CACDA1A9D121C00D37729 /* LaunchScreen.xib in Resources */,
 				016CACD71A9D121C00D37729 /* Images.xcassets in Resources */,
 			);
@@ -361,9 +380,11 @@
 				01F9F2231A9E43F5000143A9 /* MapViewController.swift in Sources */,
 				016CACD21A9D121C00D37729 /* ViewController.swift in Sources */,
 				01F9F21D1A9E41B7000143A9 /* UserInfo.swift in Sources */,
+				01F9F2401A9F922A000143A9 /* CenterAnnotationView.swift in Sources */,
 				01F9F21F1A9E4343000143A9 /* Location.swift in Sources */,
 				01F9F2251A9E4487000143A9 /* ListItemsTableViewController.swift in Sources */,
 				016CACD01A9D121C00D37729 /* AppDelegate.swift in Sources */,
+				01F9F2471A9FF415000143A9 /* UserLocationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

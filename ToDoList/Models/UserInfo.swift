@@ -12,6 +12,7 @@ class UserInfo: NSObject {
     
     var name: NSString = ""
     var cellphoneNumber: Int = 0
+    var locations: [ListItem] = []
     
     func getCellphoneNumberWithFormat() -> NSString {
         return NSString(format: "+%@", cellphoneNumber)

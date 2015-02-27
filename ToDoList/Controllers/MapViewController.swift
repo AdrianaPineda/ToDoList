@@ -8,31 +8,17 @@
 
 import UIKit
 
-class MapViewController: UIViewController, CLLocationManagerDelegate {
+class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
 
+    var firstLoad: Bool = true
     
+    @IBOutlet weak var addLocation: UIBarButtonItem!
     @IBOutlet weak var mapView : MKMapView?
     var theCoordinate: CLLocationCoordinate2D?
     var locationManager: CLLocationManager?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        // Load google maps view
-//        var camera = GMSCameraPosition.cameraWithLatitude(-33.868,
-//            longitude:151.2086, zoom:6)
-//        mapView = GMSMapView.mapWithFrame(CGRectZero, camera:camera)
-//        mapView?.settings.compassButton = true
-//        mapView?.settings.myLocationButton = true
-//        
-//        var marker = GMSMarker()
-//        marker.position = camera.target
-//        marker.snippet = "Hello World"
-//        marker.appearAnimation = kGMSMarkerAnimationPop
-//        marker.map = mapView
-//        
-//        self.view = mapView
         
         locationManager = CLLocationManager()
         locationManager?.delegate = self
@@ -42,8 +28,20 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         
         locationManager?.startUpdatingLocation()
         
-        mapView?.region.span.latitudeDelta = 0.005
-        mapView?.region.span.longitudeDelta = 0.005
+        //Set delegate
+        mapView?.delegate = self
+
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        var currentLocation = mapView?.userLocation
+        var coordinate = currentLocation?.coordinate
+        var zoomLocation: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: coordinate!.latitude, longitude: coordinate!.longitude)
+        
+        var viewRegion: MKCoordinateRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 0.5*1609.344, 0.5*1609.344)
+        
+        mapView?.setRegion(viewRegion, animated: true)
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -52,25 +50,41 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
-        NSLog("Location %@", locations)
+//        NSLog("Location %@", locations)
         
     }
     
-//    func showAnotation() -> Void {
-//        var region: MKCoordinateRegion?
-//        region?.center = theCoordinate!
-//        
-//        var span:MKCoordinateSpan?
-//        span?.latitudeDelta = 0.005
-//        span?.longitudeDelta = 0.005
-//        
-//        region?.span = span!
-//        
-//        mapView?.setRegion(region!, animated: true)
-//        
-////        var annotation: DDAnnotation = DDAnnotation.alloc()
-//    }
+    // MARK: MapView Delegate
+    func mapView(mapView: MKMapView!, didUpdateUserLocation userLocation: MKUserLocation!) {
+        if firstLoad {
+            mapView.centerCoordinate = userLocation.location.coordinate
+            firstLoad = false
+        }
+        
+    }
     
+    func mapView(mapView: MKMapView!, regionDidChangeAnimated animated: Bool) {
+        var centerLocation: CLLocationCoordinate2D = mapView.centerCoordinate
+        var location: CLLocation = CLLocation(latitude: centerLocation.latitude, longitude: centerLocation.longitude)
+        
+//        NSLog("Location %@", location)
+    }
+    
+    // MARK: UIButton actions
+    @IBAction func addLocation(sender: AnyObject) {
+        
+        var centerLocation: CLLocationCoordinate2D = mapView!.centerCoordinate
+        var location: CLLocation = CLLocation(latitude: centerLocation.latitude, longitude: centerLocation.longitude)
+        
+        
+        
+        NSLog("Location %@", location)
+    }
+
+//
+//    func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
+//        <#code#>
+//    }
     /*
     // MARK: - Navigation
 

@@ -21,18 +21,32 @@
                                 <rect key="frame" x="0.0" y="507" width="600" height="44"/>
                                 <items>
                                     <barButtonItem title="Refresh" id="o9d-Uv-dKZ"/>
+                                    <barButtonItem title="Add location" id="9sq-1R-OTX">
+                                        <connections>
+                                            <action selector="addLocation:" destination="Vig-nI-ZOn" id="PLJ-71-yx1"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hbv-Hz-JWW">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="507"/>
                             </mapView>
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="location_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="ElS-9E-8Qb">
+                                <rect key="frame" x="266" y="224" width="68" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="68" id="UEm-Ny-6D6"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="hbv-Hz-JWW" firstAttribute="top" secondItem="aoe-nG-xPe" secondAttribute="topMargin" id="3c1-Te-huu"/>
+                            <constraint firstItem="ElS-9E-8Qb" firstAttribute="top" secondItem="NvB-dr-pL9" secondAttribute="bottom" constant="204" id="8AS-rE-GXT"/>
+                            <constraint firstItem="UEq-yd-quV" firstAttribute="top" secondItem="ElS-9E-8Qb" secondAttribute="bottom" constant="223" id="CaE-FE-sc2"/>
                             <constraint firstItem="UEq-yd-quV" firstAttribute="leading" secondItem="aoe-nG-xPe" secondAttribute="leadingMargin" constant="-16" id="DLN-YL-JOZ"/>
                             <constraint firstItem="hbv-Hz-JWW" firstAttribute="leading" secondItem="aoe-nG-xPe" secondAttribute="leadingMargin" constant="-16" id="Gy8-eT-2Ji"/>
                             <constraint firstItem="UEq-yd-quV" firstAttribute="top" secondItem="hbv-Hz-JWW" secondAttribute="bottom" id="KKd-LX-enY"/>
+                            <constraint firstItem="ElS-9E-8Qb" firstAttribute="centerX" secondItem="UEq-yd-quV" secondAttribute="centerX" id="Quh-JC-xFf"/>
                             <constraint firstItem="UEq-yd-quV" firstAttribute="top" secondItem="hbv-Hz-JWW" secondAttribute="bottom" id="aqU-VE-lcV"/>
                             <constraint firstItem="FJH-s4-Oj5" firstAttribute="top" secondItem="UEq-yd-quV" secondAttribute="bottom" id="gS3-GN-wT8"/>
                             <constraint firstAttribute="trailingMargin" secondItem="hbv-Hz-JWW" secondAttribute="trailing" constant="-16" id="xKA-7x-2rP"/>
@@ -41,6 +55,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" id="pr8-PX-90G"/>
                     <connections>
+                        <outlet property="addLocation" destination="9sq-1R-OTX" id="YjN-Mc-sTw"/>
                         <outlet property="mapView" destination="hbv-Hz-JWW" id="Nei-DG-hge"/>
                     </connections>
                 </viewController>
@@ -131,4 +146,7 @@
             <point key="canvasLocation" x="409" y="558"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="location_icon.png" width="80" height="128"/>
+    </resources>
 </document>
