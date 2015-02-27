@@ -76,7 +76,16 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         var centerLocation: CLLocationCoordinate2D = mapView!.centerCoordinate
         var location: CLLocation = CLLocation(latitude: centerLocation.latitude, longitude: centerLocation.longitude)
         
+        var listItem = ListItem()
+        listItem.name = "Location"
         
+        var listItemLocation = Location()
+        listItemLocation.latitude = centerLocation.latitude
+        listItemLocation.longitude = centerLocation.longitude
+        
+        listItem.location = listItemLocation
+        
+//        UserLocationManager.userLocationManager.addLocationForUserInfo(listItem:listItem)
         
         NSLog("Location %@", location)
     }

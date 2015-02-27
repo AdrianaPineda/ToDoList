@@ -53,7 +53,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="UEq-yd-quV" secondAttribute="trailing" constant="-16" id="z3f-gh-Spl"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Map" id="pr8-PX-90G"/>
+                    <tabBarItem key="tabBarItem" systemItem="search" id="pr8-PX-90G"/>
                     <connections>
                         <outlet property="addLocation" destination="9sq-1R-OTX" id="YjN-Mc-sTw"/>
                         <outlet property="mapView" destination="hbv-Hz-JWW" id="Nei-DG-hge"/>
@@ -63,63 +63,56 @@
             </objects>
             <point key="canvasLocation" x="1229" y="227"/>
         </scene>
-        <!--Settings-->
-        <scene sceneID="i7X-Jw-jpN">
+        <!--User Info View Controller-->
+        <scene sceneID="I0e-pA-zfE">
             <objects>
-                <viewController id="BCG-0G-IH9" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="8oG-wj-QsE"/>
-                        <viewControllerLayoutGuide type="bottom" id="i2l-SG-TNS"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ox7-ja-zZV">
+                <tableViewController id="4IH-Nf-EPQ" customClass="UserInfoViewController" customModule="ToDoList" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="PCc-m9-rB7">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Settings" id="JcQ-lZ-HGl"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="y18-7I-Bgi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="userInfo" id="5Oj-Ws-GT3">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5Oj-Ws-GT3" id="Dek-bH-CFx">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="4IH-Nf-EPQ" id="KSR-Qh-qVt"/>
+                            <outlet property="delegate" destination="4IH-Nf-EPQ" id="WGP-tQ-CYd"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" systemItem="contacts" id="sJE-D0-2mM"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s6u-H3-Fxy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="783" y="1642"/>
+            <point key="canvasLocation" x="590" y="1395"/>
         </scene>
-        <!--ToDo List-->
+        <!--List Items Table View Controller-->
         <scene sceneID="dNG-jL-fX8">
             <objects>
                 <tableViewController id="rfD-w7-93P" customClass="ListItemsTableViewController" customModule="ToDoList" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="eQ5-dc-yBe">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="eQ5-dc-yBe">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <sections>
-                            <tableViewSection id="0Pw-oT-uT0">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="VC4-1y-7uF">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VC4-1y-7uF" id="WV5-sR-56d">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="DP7-qf-4HM">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DP7-qf-4HM" id="Ppg-Pl-Et8">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="hIK-B6-Wcc">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hIK-B6-Wcc" id="hjw-Nc-FOv">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="listItem" id="VC4-1y-7uF">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VC4-1y-7uF" id="WV5-sR-56d">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
                         <connections>
                             <outlet property="dataSource" destination="rfD-w7-93P" id="UTZ-01-QWI"/>
                             <outlet property="delegate" destination="rfD-w7-93P" id="VTz-Lc-TbV"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="ToDo List" id="pYy-mG-d53"/>
+                    <tabBarItem key="tabBarItem" systemItem="downloads" id="pYy-mG-d53"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3X1-qJ-Qde" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -138,7 +131,7 @@
                     <connections>
                         <segue destination="Vig-nI-ZOn" kind="relationship" relationship="viewControllers" id="BRJ-Fy-Pbu"/>
                         <segue destination="rfD-w7-93P" kind="relationship" relationship="viewControllers" id="Qtq-fS-aXq"/>
-                        <segue destination="BCG-0G-IH9" kind="relationship" relationship="viewControllers" id="WDJ-M4-c1h"/>
+                        <segue destination="4IH-Nf-EPQ" kind="relationship" relationship="viewControllers" id="3PP-3S-6XW"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tzN-uC-Exw" userLabel="First Responder" sceneMemberID="firstResponder"/>

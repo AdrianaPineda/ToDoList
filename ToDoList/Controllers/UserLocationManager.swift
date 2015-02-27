@@ -15,6 +15,9 @@ private let userInfo: UserInfo = UserInfo()
 class UserLocationManager: NSObject {
     
     class var userLocationManager: UserLocationManager {
+        userInfo.name = "Adriana"
+        userInfo.cellphoneNumber = 123456
+        
         return sharedInstance
     }
     
@@ -23,11 +26,10 @@ class UserLocationManager: NSObject {
     }
     
     func loadUserLocationConfig() {
-        var defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
         
-        var userInfoName = defaults.objectForKey("user_name") as NSString
-        var userInfoCellphone = defaults.objectForKey("user_cellphone") as Int
-        var listItemCount = defaults.objectForKey("list_item_count") as Int
+        var userInfoName = UsersDefaultManager.objectForKey("user_name") as NSString
+        var userInfoCellphone = UsersDefaultManager.objectForKey("user_cellphone") as Int
+        var listItemCount = UsersDefaultManager.objectForKey("list_item_count") as Int
         
         var listItems: [ListItem] = []
         var index: Int
@@ -35,15 +37,15 @@ class UserLocationManager: NSObject {
             
             var itemNum = NSString(format: "item_%d_", index)
             
-            var itemName = defaults.objectForKey(itemNum + "_name") as NSString
-            var itemAltitude = defaults.objectForKey(itemNum + "_altitude") as Double
-            var itemLongitude = defaults.objectForKey(itemNum + "_longitude") as Double
+            var itemName = UsersDefaultManager.objectForKey(itemNum + "_name") as NSString
+            var itemAltitude = UsersDefaultManager.objectForKey(itemNum + "_altitude") as Double
+            var itemLongitude = UsersDefaultManager.objectForKey(itemNum + "_longitude") as Double
             
             var currentListItem = ListItem()
             currentListItem.name = itemName
             
             var currentLocation = Location()
-            currentLocation.altitude = itemAltitude
+            currentLocation.latitude = itemAltitude
             currentLocation.longitude = itemLongitude
             
             currentListItem.location = currentLocation
@@ -53,11 +55,33 @@ class UserLocationManager: NSObject {
         
         userInfo.name = userInfoName
         userInfo.cellphoneNumber = userInfoCellphone
-        userInfo.locations = listItems
+        userInfo.items = listItems
         
     }
     
     func getCurrentUserInfo() -> UserInfo{
         return userInfo
+    }
+    
+    func updateUserInfo(name:NSString, cellphone:Int) -> Void {
+        userInfo.name = name
+        userInfo.cellphoneNumber = cellphone
+        userInfo.items = []
+        
+        UsersDefaultManager.setObject(userInfo.name, forKey: "user_name")
+        UsersDefaultManager.setObject(userInfo.cellphoneNumber, forKey: "user_cellphone")
+        
+    }
+    
+    func addLocationForUserInfo(listItem: ListItem) -> Void {
+        userInfo.items.append(listItem)
+        
+        var numberOfLocations = userInfo.items.count
+        var itemNum = NSString(format: "item_%d_", numberOfLocations)
+        
+        UsersDefaultManager.setObject(numberOfLocations, forKey:"list_item_count")
+        UsersDefaultManager.setObject(listItem.name, forKey:(itemNum + "_name"))
+        UsersDefaultManager.setObject(listItem.location.latitude, forKey:(itemNum + "_altitude"))
+        UsersDefaultManager.setObject(listItem.location.longitude, forKey:(itemNum + "_longitude"))
     }
 }
