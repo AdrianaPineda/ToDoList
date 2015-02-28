@@ -15,14 +15,25 @@ private let userInfo: UserInfo = UserInfo()
 class UserLocationManager: NSObject {
     
     class var userLocationManager: UserLocationManager {
-        userInfo.name = "Adriana"
-        userInfo.cellphoneNumber = 123456
         
         return sharedInstance
     }
     
     override init() {
         super.init()
+        initUserNameAndCellphone()
+        loadUserLocationConfig()
+    }
+    
+    func initUserNameAndCellphone() {
+        
+        UsersDefaultManager.setObject("Adriana", forKey: "user_name")
+        UsersDefaultManager.setObject(123456, forKey: "user_cellphone")
+        
+        if UsersDefaultManager.objectForKey("list_item_count") == nil {
+            UsersDefaultManager.setObject(0, forKey: "list_item_count")
+        }
+        
     }
     
     func loadUserLocationConfig() {
@@ -74,6 +85,10 @@ class UserLocationManager: NSObject {
     }
     
     func addLocationForUserInfo(listItem: ListItem) -> Void {
+        
+        // Show confirmation alert message
+        
+        
         userInfo.items.append(listItem)
         
         var numberOfLocations = userInfo.items.count
@@ -83,5 +98,48 @@ class UserLocationManager: NSObject {
         UsersDefaultManager.setObject(listItem.name, forKey:(itemNum + "_name"))
         UsersDefaultManager.setObject(listItem.location.latitude, forKey:(itemNum + "_altitude"))
         UsersDefaultManager.setObject(listItem.location.longitude, forKey:(itemNum + "_longitude"))
+    }
+    
+    func getCurrentNumberOfUserItems() -> Int {
+        return userInfo.items.count
+    }
+    
+    func deleteListItemAtIndex(index: Int) -> Void {
+        
+        userInfo.items.removeAtIndex(index)
+        
+        var numberOfLocations = userInfo.items.count
+        var itemNum = NSString(format: "item_%d_", (index+1))
+        
+        UsersDefaultManager.setObject(numberOfLocations, forKey:"list_item_count")
+        UsersDefaultManager.removeObjectForKey(itemNum + "_name")
+        UsersDefaultManager.removeObjectForKey(itemNum + "_altitude")
+        UsersDefaultManager.removeObjectForKey(itemNum + "_longitude")
+    }
+    
+    func checkForLocationsNearBy(currentLatitude: Double, currentLongitude: Double) -> Void {
+        var locations: [ListItem] = locationsNearBy(currentLatitude, currentLongitude: currentLongitude) as [ListItem]
+        
+        if locations.count > 0 {
+            //SEND Messages
+        }
+    }
+    
+    func locationsNearBy(currentLatitude: Double, currentLongitude: Double) -> [ListItem] {
+        
+        var itemsNearBy: [ListItem] = []
+        var index = 0
+        for (index; index < userInfo.items.count; ++index) {
+            
+            var currentItem = userInfo.items[index]
+            var locationIsNearBy = currentItem.isLocationNearCurrentLocation(currentLatitude, longitude: currentLongitude)
+            
+            if locationIsNearBy {
+                //Send SMS???
+                itemsNearBy.append(currentItem)
+            }
+        }
+        
+        return itemsNearBy
     }
 }

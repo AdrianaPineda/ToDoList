@@ -1,7 +1,6 @@
-FRAMEWORK_SEARCH_PATHS = "$(PODS_ROOT)/Google-Maps-iOS-SDK" "$(PODS_ROOT)/Google-Maps-iOS-SDK"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/Google-Maps-iOS-SDK"
-OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/Google-Maps-iOS-SDK"
-OTHER_LDFLAGS = -ObjC -l"Pods-ToDoList-Google-Maps-iOS-SDK" -l"c++" -l"icucore" -l"z" -framework "AVFoundation" -framework "CoreData" -framework "CoreGraphics" -framework "CoreLocation" -framework "CoreText" -framework "GLKit" -framework "GoogleMaps" -framework "ImageIO" -framework "OpenGLES" -framework "QuartzCore" -framework "SystemConfiguration"
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/ASIHTTPRequest" "${PODS_ROOT}/Headers/Public/Reachability" "$(SDKROOT)/usr/include/libxml2"
+OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/ASIHTTPRequest" -isystem "${PODS_ROOT}/Headers/Public/Reachability"
+OTHER_LDFLAGS = -ObjC -l"Pods-ToDoList-ASIHTTPRequest" -l"Pods-ToDoList-Reachability" -l"xml2.2" -l"z.1" -framework "CFNetwork" -framework "CoreGraphics" -framework "MobileCoreServices" -framework "SystemConfiguration"
 OTHER_LIBTOOLFLAGS = $(OTHER_LDFLAGS)
 PODS_ROOT = ${SRCROOT}/Pods

@@ -2,6 +2,6 @@
 # platform :ios, '6.0'
 
 target 'ToDoList' do
-    pod 'Google-Maps-iOS-SDK'
+    pod 'ASIHTTPRequest'
 end
 

@@ -50,15 +50,54 @@ class UserInfoViewController: UITableViewController {
         // Configure the cell...
         if indexPath.section == 0 {
             cell.textLabel?.text = userInfoCells[indexPath.row]
+            var accessoryView = UILabel(frame: CGRectMake(0, 0, 80, 43))
+            
+            if indexPath.row == 0 {
+                accessoryView.text = UserLocationManager.userLocationManager.getCurrentUserInfo().name
+            } else {
+                accessoryView.text = NSString(format: "+%i", UserLocationManager.userLocationManager.getCurrentUserInfo().cellphoneNumber)
+            }
+            
+            accessoryView.font = UIFont(name: "Helvetica-Light", size: 15)
+            accessoryView.textColor = UIColor.grayColor()
+            
+            cell.accessoryView = accessoryView
+            
+            cell.selectionStyle = UITableViewCellSelectionStyle.None
+            
         } else {
-//            cell.textLabel?.text = "Change info"
+            cell.textLabel?.text = "Change info"
         }
         
-//        cell.selectionStyle = UITableViewCell.Selectio
     
-    return cell
+        return cell
     }
     
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        
+        if section == 0 {
+            return "User Info"
+        } else {
+            return ""
+        }
+        
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+
+        if indexPath.section == 1 {
+            
+            tableView.deselectRowAtIndexPath(indexPath, animated: true)
+            
+            var alertController = UIAlertController(title: "Change User Info", message: "Select the option that better suites you", preferredStyle: UIAlertControllerStyle.ActionSheet)
+            
+            alertController.addAction(UIAlertAction(title: "Change cellphone number", style: UIAlertActionStyle.Default, handler: nil))
+            alertController.addAction(UIAlertAction(title: "Change user name", style: UIAlertActionStyle.Default, handler: nil))
+            alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
+        
+            presentViewController(alertController, animated: true, completion: nil)
+        }
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {

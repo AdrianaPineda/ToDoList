@@ -18,9 +18,17 @@ class UsersDefaultManager {
         defaults.synchronize()
     }
     
-    class func objectForKey(key: NSString) -> AnyObject {
+    class func objectForKey(key: NSString) -> AnyObject! {
         
         var defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
-        return defaults.objectForKey(key)!
+        return defaults.objectForKey(key)?
+    }
+    
+    class func removeObjectForKey(key: NSString) -> Void {
+        
+        var defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
+        defaults.removeObjectForKey(key)
+        
+        defaults.synchronize()
     }
 }

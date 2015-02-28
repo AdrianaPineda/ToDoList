@@ -4,7 +4,12 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Pods-ToDoList-Google-Maps-iOS-SDK.xcscheme</key>
+		<key>Pods-ToDoList-ASIHTTPRequest.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-ToDoList-Reachability.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -17,12 +22,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>4823DB1FDB888691F3C054F6</key>
+		<key>4ACC762F5FD179EC2F2EF4FF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5133D52E8A993B991869C3B3</key>
+		<key>5574E1AB52F41057411FA239</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6218F668F42A053192DA9601</key>
 		<dict>
 			<key>primary</key>
 			<true/>

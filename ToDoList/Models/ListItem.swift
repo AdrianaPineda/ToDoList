@@ -10,7 +10,33 @@ import UIKit
 
 class ListItem: NSObject {
     
+    var numberId: Int = 0
     var name: NSString = ""
     var location: Location = Location()
+    
+    func isLocationNearCurrentLocation(latitude: Double, longitude: Double) -> Bool {
+        
+        var R: Double = 6373
+        var phi1 = getRadians(latitude)
+        var phi2 = getRadians(location.latitude)
+        var lambda1 = getRadians(location.latitude - latitude)
+        var lambda2 = getRadians(location.longitude - longitude)
+        
+        var a = sin(lambda1/2)*sin(lambda1/2) + cos(phi1)*cos(phi2)*sin(lambda2/2)*sin(lambda2/2)
+        var c: Double = 2*atan2(sqrt(a), sqrt(1-a))
+        
+        var d = R*c
+        
+        if d < 2 {
+            return true
+        } else {
+            return false
+        }
+        
+    }
+    
+    func getRadians(degrees: Double) -> Double {
+        return degrees*(M_PI/180)
+    }
     
 }
