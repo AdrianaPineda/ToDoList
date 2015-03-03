@@ -12,7 +12,10 @@ class ListItem: NSObject {
     
     var numberId: Int = 0
     var name: NSString = ""
+    var cellphoneNumber: NSNumber = 0
     var location: Location = Location()
+    var lastReminder: NSDate?
+    var message: NSString = ""
     
     func isLocationNearCurrentLocation(latitude: Double, longitude: Double) -> Bool {
         
@@ -37,6 +40,33 @@ class ListItem: NSObject {
     
     func getRadians(degrees: Double) -> Double {
         return degrees*(M_PI/180)
+    }
+    
+    func updateLastReminder() -> Void {
+        lastReminder = NSDate()
+    }
+    
+    func shouldSendReminder() -> Bool {
+        
+        var currentDate = NSDate()
+        var currentDiff = currentDate.timeIntervalSinceNow
+        
+        if lastReminder != nil {
+            var lastReminderDiff = lastReminder?.timeIntervalSinceNow
+            
+            var differenceInSeconds = currentDiff - lastReminderDiff!
+            var differenceInMinutes = differenceInSeconds/60
+            var differenceInHours = differenceInMinutes/60
+            
+            if differenceInHours < 5 {
+                return false
+            }
+            
+        } else {
+            updateLastReminder()
+        }
+        
+        return true
     }
     
 }

@@ -31,4 +31,11 @@ class UsersDefaultManager {
         
         defaults.synchronize()
     }
+    
+    class func resetUserDefaults() -> Void {
+        var appDomain = NSBundle.mainBundle().bundleIdentifier
+        
+        var defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
+        defaults.removePersistentDomainForName(appDomain!)
+    }
 }

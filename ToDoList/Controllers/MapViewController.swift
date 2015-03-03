@@ -64,19 +64,24 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         } else {
             var centerLocation: CLLocationCoordinate2D = mapView.centerCoordinate
             
+            /* TODO delete
             var alertViewSuccessful = UIAlertController(title: "Location Changed", message: "Location added successfully", preferredStyle: UIAlertControllerStyle.Alert)
             alertViewSuccessful.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
             presentViewController(alertViewSuccessful, animated: true, completion: nil)
+            */
             
             UserLocationManager.userLocationManager.checkForLocationsNearBy(centerLocation.latitude, currentLongitude: centerLocation.longitude)
             
-            
             //TEST
-            var items = UserLocationManager.userLocationManager.getCurrentUserInfo().items
-            var locationIsNearBy = (items[0]).isLocationNearCurrentLocation(38.898556, longitude: -77.037852)
+//            var items = UserLocationManager.userLocationManager.getCurrentUserInfo().items
+//            var locationIsNearBy = (items[0]).isLocationNearCurrentLocation(38.898556, longitude: -77.037852)
         }
         
     }
+    
+//    @IBAction func resetLocations(sender: AnyObject) {
+//        UserLocationManager.userLocationManager.resetLocations()
+//    }
     
     func mapView(mapView: MKMapView!, regionDidChangeAnimated animated: Bool) {
 //        var centerLocation: CLLocationCoordinate2D = mapView.centerCoordinate
@@ -126,8 +131,12 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         var centerLocation: CLLocationCoordinate2D = mapView!.centerCoordinate
         var location: CLLocation = CLLocation(latitude: centerLocation.latitude, longitude: centerLocation.longitude)
         
+        var currentUserInfo: UserInfo = UserLocationManager.userLocationManager.getCurrentUserInfo()
+        
         var listItem = ListItem()
         listItem.name = locationName
+        listItem.message = locationName
+        listItem.cellphoneNumber = currentUserInfo.cellphoneNumber
         
         var listItemLocation = Location()
         listItemLocation.latitude = centerLocation.latitude

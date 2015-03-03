@@ -50,12 +50,12 @@ class UserInfoViewController: UITableViewController {
         // Configure the cell...
         if indexPath.section == 0 {
             cell.textLabel?.text = userInfoCells[indexPath.row]
-            var accessoryView = UILabel(frame: CGRectMake(0, 0, 80, 43))
+            var accessoryView = UILabel(frame: CGRectMake(0, 0, 100, 43))
             
             if indexPath.row == 0 {
                 accessoryView.text = UserLocationManager.userLocationManager.getCurrentUserInfo().name
             } else {
-                accessoryView.text = NSString(format: "+%i", UserLocationManager.userLocationManager.getCurrentUserInfo().cellphoneNumber)
+                accessoryView.text = "+" + UserLocationManager.userLocationManager.getCurrentUserInfo().cellphoneNumber.stringValue
             }
             
             accessoryView.font = UIFont(name: "Helvetica-Light", size: 15)

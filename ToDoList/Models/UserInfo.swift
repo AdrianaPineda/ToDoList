@@ -11,11 +11,7 @@ import UIKit
 class UserInfo: NSObject {
     
     var name: NSString = ""
-    var cellphoneNumber: Int = 0
+    var cellphoneNumber: NSNumber = 0
     var items: [ListItem] = []
-    
-    func getCellphoneNumberWithFormat() -> NSString {
-        return NSString(format: "+%@", cellphoneNumber)
-    }
    
 }

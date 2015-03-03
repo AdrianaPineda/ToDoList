@@ -28,7 +28,7 @@ class UserLocationManager: NSObject {
     func initUserNameAndCellphone() {
         
         UsersDefaultManager.setObject("Adriana", forKey: "user_name")
-        UsersDefaultManager.setObject(123456, forKey: "user_cellphone")
+        UsersDefaultManager.setObject(4158601827, forKey: "user_cellphone")
         
         if UsersDefaultManager.objectForKey("list_item_count") == nil {
             UsersDefaultManager.setObject(0, forKey: "list_item_count")
@@ -49,6 +49,8 @@ class UserLocationManager: NSObject {
             var itemNum = NSString(format: "item_%d_", index)
             
             var itemName = UsersDefaultManager.objectForKey(itemNum + "_name") as NSString
+            var itemMessage = UsersDefaultManager.objectForKey(itemNum + "_message") as NSString
+            var itemCellphone = UsersDefaultManager.objectForKey(itemNum + "_cellphone") as NSNumber
             var itemAltitude = UsersDefaultManager.objectForKey(itemNum + "_altitude") as Double
             var itemLongitude = UsersDefaultManager.objectForKey(itemNum + "_longitude") as Double
             
@@ -96,6 +98,8 @@ class UserLocationManager: NSObject {
         
         UsersDefaultManager.setObject(numberOfLocations, forKey:"list_item_count")
         UsersDefaultManager.setObject(listItem.name, forKey:(itemNum + "_name"))
+        UsersDefaultManager.setObject(listItem.message, forKey:(itemNum + "_message"))
+        UsersDefaultManager.setObject(listItem.cellphoneNumber, forKey:(itemNum + "_cellphone"))
         UsersDefaultManager.setObject(listItem.location.latitude, forKey:(itemNum + "_altitude"))
         UsersDefaultManager.setObject(listItem.location.longitude, forKey:(itemNum + "_longitude"))
     }
@@ -113,6 +117,8 @@ class UserLocationManager: NSObject {
         
         UsersDefaultManager.setObject(numberOfLocations, forKey:"list_item_count")
         UsersDefaultManager.removeObjectForKey(itemNum + "_name")
+        UsersDefaultManager.removeObjectForKey(itemNum + "_message")
+        UsersDefaultManager.removeObjectForKey(itemNum + "_cellphone")
         UsersDefaultManager.removeObjectForKey(itemNum + "_altitude")
         UsersDefaultManager.removeObjectForKey(itemNum + "_longitude")
     }
@@ -122,6 +128,7 @@ class UserLocationManager: NSObject {
         
         if locations.count > 0 {
             //SEND Messages
+//            MessageManager.sendMessage("TEsT message", cellphoneNumber: userInfo.cellphoneNumber)
         }
     }
     

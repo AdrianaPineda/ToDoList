@@ -23,7 +23,7 @@ class ListItemsTableViewController: UITableViewController {
         
         var mainScreenSize = UIScreen.mainScreen().bounds.size
         noRecordsLabel = UILabel()
-        noRecordsLabel?.frame = CGRectMake(16, 60, 150, 43)
+        noRecordsLabel?.frame = CGRectMake(16, 20, 150, 43)
         noRecordsLabel?.text = "No locations added"
         noRecordsLabel?.textColor = UIColor.grayColor()
         
@@ -31,11 +31,7 @@ class ListItemsTableViewController: UITableViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-        if UserLocationManager.userLocationManager.getCurrentNumberOfUserItems() == 0 {
-            noRecordsLabel?.hidden = false
-        } else {
-            noRecordsLabel?.hidden = true
-        }
+        hideOrUnhideNoRecordsLabel()
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,6 +39,14 @@ class ListItemsTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    func hideOrUnhideNoRecordsLabel() -> Void {
+        if UserLocationManager.userLocationManager.getCurrentNumberOfUserItems() == 0 {
+            noRecordsLabel?.hidden = false
+        } else {
+            noRecordsLabel?.hidden = true
+        }
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -74,10 +78,9 @@ class ListItemsTableViewController: UITableViewController {
             var userLocation = currentItem.location
             
             // Configure the cell...
-            cell.textLabel?.text = NSString(format: "%d, %d", userLocation.latitude, userLocation.longitude)
-        } else {
-            cell.textLabel?.text = "No locations added"
-            cell.selectionStyle = UITableViewCellSelectionStyle.None
+//            cell.textLabel?.text = NSString(format: "%d, %d", userLocation.latitude, userLocation.longitude)
+            cell.textLabel?.text = currentItem.name
+            cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
         }
 
         return cell
@@ -89,8 +92,12 @@ class ListItemsTableViewController: UITableViewController {
         return true
     }
 
-    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Saved Locations"
+//    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        return "Saved Locations"
+//    }
+
+    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 0.01
     }
     
     // Override to support editing the table view.
@@ -100,6 +107,9 @@ class ListItemsTableViewController: UITableViewController {
             UserLocationManager.userLocationManager.deleteListItemAtIndex(indexPath.row)
             // Delete the row from the data source
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            
+            //See if no records label should appear
+            hideOrUnhideNoRecordsLabel()
             
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
@@ -121,14 +131,26 @@ class ListItemsTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
-    }
-    */
+        
+        if segue.identifier == "showLocationDetail" {
+            var locationDetailViewController: LocationDetailViewController = segue.destinationViewController as LocationDetailViewController
+            var indexPath = tableView.indexPathForSelectedRow()
+            var selectedRow = indexPath?.row
+            var items = UserLocationManager.userLocationManager.getCurrentUserInfo().items
+            var selectedListItem = items[selectedRow!]
+            
+            locationDetailViewController.selectedItemIndex = selectedRow!
+            
+            //Deselect row
+            tableView.deselectRowAtIndexPath(indexPath!, animated: true)
+        }
+    }    
 
 }

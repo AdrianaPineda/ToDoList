@@ -20,6 +20,10 @@
 		016CACD51A9D121C00D37729 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 016CACD31A9D121C00D37729 /* Main.storyboard */; };
 		016CACDA1A9D121C00D37729 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 016CACD81A9D121C00D37729 /* LaunchScreen.xib */; };
 		016CACE61A9D121C00D37729 /* ToDoListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016CACE51A9D121C00D37729 /* ToDoListTests.swift */; };
+		01AC9FAD1AA54E8F00BB4C1D /* LocationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AC9FAC1AA54E8F00BB4C1D /* LocationDetailViewController.swift */; };
+		01AC9FB11AA5505700BB4C1D /* profile_icon2.png in Resources */ = {isa = PBXBuildFile; fileRef = 01AC9FAE1AA5505700BB4C1D /* profile_icon2.png */; };
+		01AC9FB21AA5505700BB4C1D /* reminders_icon2.png in Resources */ = {isa = PBXBuildFile; fileRef = 01AC9FAF1AA5505700BB4C1D /* reminders_icon2.png */; };
+		01AC9FB31AA5505700BB4C1D /* search_icon2.png in Resources */ = {isa = PBXBuildFile; fileRef = 01AC9FB01AA5505700BB4C1D /* search_icon2.png */; };
 		01F9F2081A9D5643000143A9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F9F2071A9D5643000143A9 /* CoreLocation.framework */; };
 		01F9F21D1A9E41B7000143A9 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F9F21C1A9E41B7000143A9 /* UserInfo.swift */; };
 		01F9F21F1A9E4343000143A9 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F9F21E1A9E4343000143A9 /* Location.swift */; };
@@ -73,6 +77,10 @@
 		016CACDF1A9D121C00D37729 /* ToDoListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToDoListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		016CACE41A9D121C00D37729 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		016CACE51A9D121C00D37729 /* ToDoListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListTests.swift; sourceTree = "<group>"; };
+		01AC9FAC1AA54E8F00BB4C1D /* LocationDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationDetailViewController.swift; sourceTree = "<group>"; };
+		01AC9FAE1AA5505700BB4C1D /* profile_icon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile_icon2.png; sourceTree = "<group>"; };
+		01AC9FAF1AA5505700BB4C1D /* reminders_icon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reminders_icon2.png; sourceTree = "<group>"; };
+		01AC9FB01AA5505700BB4C1D /* search_icon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search_icon2.png; sourceTree = "<group>"; };
 		01F9F2071A9D5643000143A9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		01F9F21C1A9E41B7000143A9 /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		01F9F21E1A9E4343000143A9 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
@@ -221,6 +229,9 @@
 		01F9F2431A9FEE6D000143A9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				01AC9FAE1AA5505700BB4C1D /* profile_icon2.png */,
+				01AC9FAF1AA5505700BB4C1D /* reminders_icon2.png */,
+				01AC9FB01AA5505700BB4C1D /* search_icon2.png */,
 				0145A2751AA225460003FE7C /* rsz_profile_icon.png */,
 				010B68461AA1473D00DC6091 /* profile_icon.png */,
 				010B68471AA1473D00DC6091 /* reminders_icon.png */,
@@ -244,6 +255,7 @@
 			isa = PBXGroup;
 			children = (
 				01F9F2241A9E4487000143A9 /* ListItemsTableViewController.swift */,
+				01AC9FAC1AA54E8F00BB4C1D /* LocationDetailViewController.swift */,
 			);
 			name = ListItems;
 			sourceTree = "<group>";
@@ -379,12 +391,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				010B684B1AA1473D00DC6091 /* reminders_icon.png in Resources */,
+				01AC9FB11AA5505700BB4C1D /* profile_icon2.png in Resources */,
 				0145A26C1AA21AA70003FE7C /* Images.xcassets in Resources */,
 				016CACD51A9D121C00D37729 /* Main.storyboard in Resources */,
 				01F9F2451A9FEE6D000143A9 /* location_icon.png in Resources */,
 				016CACDA1A9D121C00D37729 /* LaunchScreen.xib in Resources */,
 				010B684C1AA1473D00DC6091 /* search_icon.png in Resources */,
+				01AC9FB31AA5505700BB4C1D /* search_icon2.png in Resources */,
 				010B684A1AA1473D00DC6091 /* profile_icon.png in Resources */,
+				01AC9FB21AA5505700BB4C1D /* reminders_icon2.png in Resources */,
 				010B684D1AA1473D00DC6091 /* twilio_app_icon.png in Resources */,
 				0145A2761AA225460003FE7C /* rsz_profile_icon.png in Resources */,
 			);
@@ -443,6 +458,7 @@
 				010B684F1AA14CB700DC6091 /* MessageManager.swift in Sources */,
 				01F9F2491AA033CD000143A9 /* UsersDefaultManager.swift in Sources */,
 				016CACD21A9D121C00D37729 /* ViewController.swift in Sources */,
+				01AC9FAD1AA54E8F00BB4C1D /* LocationDetailViewController.swift in Sources */,
 				01F9F21D1A9E41B7000143A9 /* UserInfo.swift in Sources */,
 				01F9F24E1AA0366B000143A9 /* UserInfoViewController.swift in Sources */,
 				01F9F21F1A9E4343000143A9 /* Location.swift in Sources */,
