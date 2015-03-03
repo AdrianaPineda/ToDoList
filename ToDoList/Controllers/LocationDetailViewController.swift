@@ -28,6 +28,7 @@ class LocationDetailViewController: UIViewController {
         
         //Add gesture recognizer
         var tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        view.addGestureRecognizer(tap)
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,7 +41,7 @@ class LocationDetailViewController: UIViewController {
 //        UserLocationManager.userLocationManager.updateLocationInfo(selectedItemIndex, name: name.text, message: message.text, cellphoneNumber: cellphoneNumber.text.toInt()!)
     }
 
-    func dismissKeyboard() -> Void {
+    func dismissKeyboard() {
         name.resignFirstResponder()
         message.resignFirstResponder()
         cellphoneNumber.resignFirstResponder()
