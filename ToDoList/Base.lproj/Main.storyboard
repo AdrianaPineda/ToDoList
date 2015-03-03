@@ -26,6 +26,12 @@
                                             <action selector="addLocation:" destination="Vig-nI-ZOn" id="PLJ-71-yx1"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem title="Reset locations" id="fkz-ag-lMm">
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="resetLocations:" destination="Vig-nI-ZOn" id="iLJ-tI-tVK"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                                 <color key="barTintColor" red="0.92941176470588238" green="0.10980392156862745" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </toolbar>
@@ -64,7 +70,7 @@
             </objects>
             <point key="canvasLocation" x="1229" y="227"/>
         </scene>
-        <!--User info-->
+        <!--User Info View Controller-->
         <scene sceneID="I0e-pA-zfE">
             <objects>
                 <tableViewController id="4IH-Nf-EPQ" customClass="UserInfoViewController" customModule="ToDoList" customModuleProvider="target" sceneMemberID="viewController">
@@ -85,7 +91,7 @@
                             <outlet property="delegate" destination="4IH-Nf-EPQ" id="WGP-tQ-CYd"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="User info" image="FAE26E08-EF4E-4E34-8824-9573062D9E68" id="sJE-D0-2mM">
+                    <tabBarItem key="tabBarItem" systemItem="contacts" id="sJE-D0-2mM">
                         <inset key="imageInsets" minX="0.0" minY="15" maxX="0.0" maxY="-15"/>
                     </tabBarItem>
                 </tableViewController>
@@ -93,7 +99,7 @@
             </objects>
             <point key="canvasLocation" x="590" y="1395"/>
         </scene>
-        <!--List Items Table View Controller-->
+        <!--Locations-->
         <scene sceneID="dNG-jL-fX8">
             <objects>
                 <tableViewController id="rfD-w7-93P" customClass="ListItemsTableViewController" customModule="ToDoList" customModuleProvider="target" sceneMemberID="viewController">
@@ -102,11 +108,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="listItem" id="VC4-1y-7uF">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="listItem" id="f7r-e4-QIV">
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VC4-1y-7uF" id="WV5-sR-56d">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="f7r-e4-QIV" id="Ra2-TM-vYD">
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="cjC-By-k0G" kind="show" identifier="showLocationDetail" id="qEG-ze-RQm"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <sections/>
@@ -115,11 +124,102 @@
                             <outlet property="delegate" destination="rfD-w7-93P" id="VTz-Lc-TbV"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" systemItem="downloads" id="pYy-mG-d53"/>
+                    <navigationItem key="navigationItem" title="Locations" id="Wvs-gM-Ueg"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3X1-qJ-Qde" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1227" y="918"/>
+            <point key="canvasLocation" x="2039" y="918"/>
+        </scene>
+        <!--Location Detail View Controller-->
+        <scene sceneID="6dz-t6-jBs">
+            <objects>
+                <viewController id="cjC-By-k0G" customClass="LocationDetailViewController" customModule="ToDoList" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WRF-ES-p1P"/>
+                        <viewControllerLayoutGuide type="bottom" id="krw-xd-phj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5b1-U5-9qj">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="viv-yZ-zSy">
+                                <rect key="frame" x="16" y="100" width="568" height="20"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0yz-RT-gcp">
+                                <rect key="frame" x="16" y="141" width="568" height="30"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="che-Xo-vZd">
+                                <rect key="frame" x="16" y="197" width="568" height="20"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o5n-0h-H4L">
+                                <rect key="frame" x="16" y="238" width="568" height="30"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cellphone number" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="910-vE-lJu">
+                                <rect key="frame" x="16" y="294" width="568" height="20"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gnm-1G-2t4">
+                                <rect key="frame" x="16" y="395" width="568" height="30"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="15"/>
+                                <state key="normal" title="Update location">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="updateLocation:" destination="cjC-By-k0G" eventType="touchUpInside" id="bUB-I8-kzx"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zeq-td-VR9">
+                                <rect key="frame" x="16" y="335" width="568" height="30"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Gnm-1G-2t4" firstAttribute="top" secondItem="zeq-td-VR9" secondAttribute="bottom" constant="30" id="1PY-a6-WL5"/>
+                            <constraint firstItem="viv-yZ-zSy" firstAttribute="top" secondItem="WRF-ES-p1P" secondAttribute="bottom" constant="36" id="7VW-Cv-s3u"/>
+                            <constraint firstItem="zeq-td-VR9" firstAttribute="top" secondItem="910-vE-lJu" secondAttribute="bottom" constant="21" id="7cP-8w-kKv"/>
+                            <constraint firstItem="o5n-0h-H4L" firstAttribute="trailing" secondItem="5b1-U5-9qj" secondAttribute="trailingMargin" id="8v3-Ao-pfD"/>
+                            <constraint firstItem="che-Xo-vZd" firstAttribute="trailing" secondItem="5b1-U5-9qj" secondAttribute="trailingMargin" id="Di5-Xa-cMD"/>
+                            <constraint firstItem="o5n-0h-H4L" firstAttribute="leading" secondItem="5b1-U5-9qj" secondAttribute="leadingMargin" id="Ka0-tv-nxr"/>
+                            <constraint firstItem="910-vE-lJu" firstAttribute="top" secondItem="o5n-0h-H4L" secondAttribute="bottom" constant="26" id="M7b-nf-l3o"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Gnm-1G-2t4" secondAttribute="trailing" id="UxR-pM-14l"/>
+                            <constraint firstItem="0yz-RT-gcp" firstAttribute="leading" secondItem="5b1-U5-9qj" secondAttribute="leadingMargin" id="Vgy-c8-GNw"/>
+                            <constraint firstItem="0yz-RT-gcp" firstAttribute="top" secondItem="viv-yZ-zSy" secondAttribute="bottom" constant="21" id="Yv5-Cc-EAZ"/>
+                            <constraint firstItem="o5n-0h-H4L" firstAttribute="top" secondItem="che-Xo-vZd" secondAttribute="bottom" constant="21" id="eu1-Qe-Co7"/>
+                            <constraint firstItem="viv-yZ-zSy" firstAttribute="trailing" secondItem="5b1-U5-9qj" secondAttribute="trailingMargin" id="g4c-Gf-iL2"/>
+                            <constraint firstItem="910-vE-lJu" firstAttribute="trailing" secondItem="5b1-U5-9qj" secondAttribute="trailingMargin" id="gGk-za-p3Q"/>
+                            <constraint firstItem="viv-yZ-zSy" firstAttribute="leading" secondItem="5b1-U5-9qj" secondAttribute="leadingMargin" id="jDZ-FL-bTc"/>
+                            <constraint firstItem="che-Xo-vZd" firstAttribute="leading" secondItem="5b1-U5-9qj" secondAttribute="leadingMargin" id="lbZ-JQ-dSp"/>
+                            <constraint firstItem="zeq-td-VR9" firstAttribute="leading" secondItem="5b1-U5-9qj" secondAttribute="leadingMargin" id="mAm-iK-NxP"/>
+                            <constraint firstItem="zeq-td-VR9" firstAttribute="trailing" secondItem="5b1-U5-9qj" secondAttribute="trailingMargin" id="ogF-OI-woI"/>
+                            <constraint firstItem="0yz-RT-gcp" firstAttribute="trailing" secondItem="5b1-U5-9qj" secondAttribute="trailingMargin" id="pGl-Jh-Ktv"/>
+                            <constraint firstItem="che-Xo-vZd" firstAttribute="top" secondItem="0yz-RT-gcp" secondAttribute="bottom" constant="26" id="uJU-7v-OM4"/>
+                            <constraint firstItem="910-vE-lJu" firstAttribute="leading" secondItem="5b1-U5-9qj" secondAttribute="leadingMargin" id="yhB-iK-dmv"/>
+                            <constraint firstItem="Gnm-1G-2t4" firstAttribute="leading" secondItem="5b1-U5-9qj" secondAttribute="leadingMargin" id="yyJ-4e-rzl"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cellphoneNumber" destination="zeq-td-VR9" id="Y5L-WJ-yTH"/>
+                        <outlet property="message" destination="o5n-0h-H4L" id="lty-5v-OCF"/>
+                        <outlet property="name" destination="0yz-RT-gcp" id="fen-XP-8vY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ULv-9I-rOH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2751" y="918"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="HH4-4U-vLc">
@@ -133,7 +233,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="Vig-nI-ZOn" kind="relationship" relationship="viewControllers" id="BRJ-Fy-Pbu"/>
-                        <segue destination="rfD-w7-93P" kind="relationship" relationship="viewControllers" id="Qtq-fS-aXq"/>
+                        <segue destination="5s8-91-80w" kind="relationship" relationship="viewControllers" id="Qtq-fS-aXq"/>
                         <segue destination="4IH-Nf-EPQ" kind="relationship" relationship="viewControllers" id="3PP-3S-6XW"/>
                     </connections>
                 </tabBarController>
@@ -141,364 +241,27 @@
             </objects>
             <point key="canvasLocation" x="409" y="558"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="yWc-Lf-abp">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5s8-91-80w" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="downloads" id="pYy-mG-d53"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="yKy-NR-URx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="rfD-w7-93P" kind="relationship" relationship="rootViewController" id="hr0-0l-dHO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B4q-CW-QNk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1227" y="918"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="FAE26E08-EF4E-4E34-8824-9573062D9E68" width="65" height="66">
-            <mutableData key="keyedArchiveRepresentation">
-YnBsaXN0MDDUAQIDBAUGOzxYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBEW
-GxwgISksLzU4VSRudWxs1AkKCwwNDg8QViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBzV05TQ29sb3KA
-DBIAwAAAgAKACtISCRMVWk5TLm9iamVjdHOhFIADgAnSEgkXGqIYGYAEgAWACBAA0h0JHh9fEBROU1RJ
-RkZSZXByZXNlbnRhdGlvboAGgAdPEVAWTU0AKgAAQxD///8AgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYESgYGBSYGBgW+BgYGWgYGBuIGBgdGBgYHigYGB7IGBge+BgYHsgYGB4oGBgdCBgYG4
-gYGBloGBgW+BgYFJgYGBEYGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAP///wCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgSGBgYFjgYGBu4GBgeaBgYH/gYGB/4GBgf+BgYH/gYGB/4GBgf+BgYH/
-gYGB/4GBgf+BgYH/gYGB/4GBgf+BgYH/gYGB/4GBgf+BgYHlgYGBuoGBgWKBgYEhgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEA////AIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgUaBgYGrgYGB9oGBgf+BgYH/gYGB/4GBgf+BgYH/
-gYGB/4GBgf+BgYH/gYGB/4GBgf2BgYH8gYGB/YGBgf+BgYH/gYGB/4GBgf+BgYH/gYGB/4GBgf+BgYH/
-gYGB/4GBgfWBgYGqgYGBRYGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQD///8AgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgU+BgYG+gYGB/4GBgf+BgYH/
-gYGB/4GBgf+BgYH/gYGB7IGBgbeBgYGOgYGBcYGBgVSBgYFBgYGBNoGBgTOBgYE2gYGBQYGBgVSBgYFx
-gYGBjoGBgbeBgYHsgYGB/4GBgf+BgYH/gYGB/4GBgf+BgYH/gYGBvYGBgU6BgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAP///wCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgSiBgYGx
-gYGB/4GBgf+BgYH/gYGB/4GBgf+BgYHZgYGBmYGBgUOBgYEXgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgReBgYFEgYGBmoGBgdqBgYH/gYGB/4GBgf+BgYH/
-gYGB/4GBga+BgYEngYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEA////AIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYF5gYGB/IGBgf+BgYH/gYGB/4GBgf+BgYG3gYGBUIGBgQWBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBBoGBgVGBgYG4gYGB/4GBgf+BgYH/gYGB/4GBgfuBgYF4gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQD///8AgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEjgYGBvYGBgf+BgYH/gYGB/4GBgf+BgYGzgYGBQ4GBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYFEgYGBtYGBgf+BgYH/gYGB/4GBgf+BgYG8
-gYGBIYGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAP///wCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBOoGBgeeBgYH/gYGB/4GBgf+BgYHf
-gYGBWIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBWoGBgeCBgYH/gYGB/4GBgf+BgYHlgYGBOIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEA////AIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgVWBgYH+
-gYGB/4GBgf+BgYH/gYGBmoGBgQ2BgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBDoGBgZ2BgYH/gYGB/4GBgf+BgYH9gYGBU4GBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQD///8AgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYFcgYGB/4GBgf+BgYH/gYGB/4GBgWiBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgWqBgYH/
-gYGB/4GBgf+BgYH/gYGBWYGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAP///wCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBT4GBgf+BgYH/gYGB/4GBge+BgYFGgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQaBgYET
-gYGBGIGBgROBgYEGgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgUiBgYHwgYGB/4GBgf+BgYH/gYGBTYGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEA////AIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgTOBgYH/gYGB/4GBgf+BgYH0
-gYGBMYGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEn
-gYGBYoGBgaWBgYHMgYGB3IGBgeeBgYHqgYGB54GBgdyBgYHKgYGBooGBgV6BgYEkgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgTOBgYH2gYGB/4GBgf+BgYH/
-gYGBMIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQD///8AgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEV
-gYGB5YGBgf+BgYH/gYGB8oGBgTSBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYFBgYGBsIGBgf2BgYH/gYGB/4GBgf+BgYH/gYGB/4GBgf+BgYH/gYGB/4GBgf+BgYH/
-gYGB/4GBgfmBgYGogYGBOYGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgTeBgYH0gYGB/4GBgf+BgYHigYGBEoGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAP///wCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgbaBgYH/gYGB/4GBgf+BgYFFgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBkIGBgf+BgYH/gYGB/4GBgf+BgYH/gYGB/4GBgf+BgYH/
-gYGB/4GBgf+BgYH/gYGB/4GBgf+BgYH/gYGB/4GBgf+BgYH/gYGBg4GBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgUmBgYH/gYGB/4GBgf+BgYGygYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEA////AIGBgQCBgYEAgYGBAIGBgQCBgYFngYGB/4GBgf+BgYH/gYGBa4GBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAYGBgbKBgYH/gYGB/4GBgf+BgYH/
-gYGB0YGBgZqBgYFggYGBPoGBgS6BgYEpgYGBLoGBgUCBgYFjgYGBn4GBgdiBgYH/gYGB/4GBgf+BgYH/
-gYGBpoGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgXCBgYH/
-gYGB/4GBgf+BgYFlgYGBAIGBgQCBgYEAgYGBAIGBgQD///8AgYGBAIGBgQCBgYEAgYGBG4GBgf2BgYH/
-gYGB/4GBga6BgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYGl
-gYGB/4GBgf+BgYH/gYGBzYGBgU+BgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBBIGBgVyBgYHbgYGB/4GBgf+BgYH/gYGBl4GBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgbKBgYH/gYGB/4GBgfyBgYEZgYGBAIGBgQCBgYEAgYGBAP///wCBgYEA
-gYGBAIGBgQCBgYGogYGB/4GBgf+BgYHpgYGBEYGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBV4GBgf+BgYH/gYGB/4GBgaOBgYELgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgRWBgYG1gYGB/4GBgf+BgYH/gYGBS4GBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBEoGBgeuBgYH/gYGB/4GBgaSBgYEA
-gYGBAIGBgQCBgYEA////AIGBgQCBgYEAgYGBNIGBgf+BgYH/gYGB/4GBgVyBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQKBgYHkgYGB/4GBgf+BgYG7gYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYHM
-gYGB/4GBgf+BgYHZgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBYYGBgf+BgYH/gYGB/4GBgTKBgYEAgYGBAIGBgQD///8AgYGBAIGBgQCBgYG1gYGB/4GBgf+BgYHJ
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBUoGBgf+BgYH/
-gYGB94GBgRmBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgSaBgYH/gYGB/4GBgf+BgYFIgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBzIGBgf+BgYH/gYGBs4GBgQCBgYEAgYGBAP///wCBgYEA
-gYGBLYGBgf+BgYH/gYGB/4GBgUKBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYGtgYGB/4GBgf+BgYGbgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgaiBgYH/gYGB/4GBgaaBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYFFgYGB/4GBgf+BgYH/
-gYGBK4GBgQCBgYEA////AIGBgQCBgYGYgYGB/4GBgf+BgYHNgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBB4GBgeiBgYH/gYGB/4GBgUOBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBTIGBgf+BgYH/gYGB5IGBgQWBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYHPgYGB/4GBgf+BgYGWgYGBAIGBgQD///8AgYGBC4GBge6BgYH/gYGB/4GBgViBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEygYGB/4GBgf+BgYHx
-gYGBDoGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYETgYGB9YGBgf+BgYH/gYGBLYGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgVuBgYH/gYGB/4GBge2BgYEJgYGBAP///wCBgYFQ
-gYGB/4GBgf+BgYHrgYGBB4GBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgVCBgYH/gYGB/4GBgciBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYHNgYGB/4GBgf+BgYFO
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBCoGBge2BgYH/
-gYGB/4GBgU6BgYEA////AIGBgaKBgYH/gYGB/4GBgZ6BgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBY4GBgf+BgYH/gYGBsIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgbOBgYH/gYGB/4GBgWGBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBo4GBgf+BgYH/gYGBoIGBgQCBgYECgYGB5IGBgf+BgYH/gYGBUIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYFtgYGB/4GBgf+BgYGk
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBpoGBgf+BgYH/gYGBbIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYFVgYGB/4GBgf+BgYHigYGBAoGBgTOBgYH/
-gYGB/4GBgfSBgYETgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgW6BgYH/gYGB/4GBgaOBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYGmgYGB/4GBgf+BgYFt
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgRWBgYH2
-gYGB/4GBgf+BgYEygYGBYYGBgf+BgYH/gYGBwYGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBYYGBgf+BgYH/gYGBs4GBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgbeBgYH/gYGB/4GBgV+BgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgcWBgYH/gYGB/4GBgWCBgYGJgYGB/4GBgf+BgYGSgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYFMgYGB/4GBgf+BgYHN
-gYGBAYGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEDgYGB0YGBgf+BgYH/gYGBSoGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBloGBgf+BgYH/gYGBh4GBga2BgYH/
-gYGB/4GBgW2BgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgTKBgYH/gYGB/4GBgeyBgYEOgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgRGBgYHwgYGB/4GBgf6BgYEv
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYFx
-gYGB/4GBgf+BgYGqgYGBx4GBgf+BgYH/gYGBUoGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBE4GBge6BgYH/gYGB/4GBgSmBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBLYGBgf+BgYH/gYGB64GBgRCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgVaBgYH/gYGB/4GBgcaBgYHbgYGB/4GBgf+BgYE9gYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGB2IGBgf+BgYH/
-gYGBTYGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYFRgYGB/4GBgf+BgYHUgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBQIGBgf+BgYH/gYGB2oGBgemBgYH/
-gYGB/YGBgS+BgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYGzgYGB/4GBgf+BgYF0gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgXiBgYH/gYGB/4GBga+BgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEy
-gYGB/oGBgf+BgYHogYGB74GBgf+BgYH4gYGBKYGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgYeBgYH/gYGB/4GBgZyBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBoIGBgf+BgYH/gYGBhIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgSyBgYH6gYGB/4GBge+BgYHvgYGB/4GBgfiBgYEpgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBXYGBgf+BgYH/
-gYGBv4GBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYHCgYGB/4GBgf+BgYFYgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBLIGBgfqBgYH/gYGB74GBgeqBgYH/
-gYGB/YGBgS+BgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYE2gYGB/4GBgf+BgYHlgYGBC4GBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBDIGBgeiBgYH/gYGB/4GBgTOBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEy
-gYGB/oGBgf+BgYHogYGB24GBgf+BgYH/gYGBPoGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgROBgYHwgYGB/4GBgf+BgYEdgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEe
-gYGB/4GBgf+BgYHsgYGBEYGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgUCBgYH/gYGB/4GBgdqBgYHGgYGB/4GBgf+BgYFTgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgdWBgYH/
-gYGB/4GBgXaBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgXiBgYH/gYGB/4GBgdKBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBVoGBgf+BgYH/gYGBxYGBgayBgYH/
-gYGB/4GBgW+BgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBkoGBgf+BgYH/gYGB/4GBgV+BgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYFlgYGB/4GBgf+BgYH/gYGBjIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYFy
-gYGB/4GBgf+BgYGqgYGBiYGBgf+BgYH/gYGBlIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEPgYGB5YGBgf+BgYH/gYGB/4GBgZKBgYEF
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEDgYGBlIGBgf+BgYH/
-gYGB/4GBgd6BgYEKgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgZaBgYH/gYGB/4GBgYeBgYFhgYGB/4GBgf+BgYHCgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEv
-gYGB5IGBgf+BgYH/gYGB/4GBgc+BgYFHgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBQ4GBgcyBgYH/gYGB/4GBgf+BgYHfgYGBKYGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBxYGBgf+BgYH/gYGBX4GBgTKBgYH/
-gYGB/4GBgfaBgYEUgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEmgYGB0IGBgf+BgYH/gYGB/4GBgf+BgYGcgYGBHIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBHYGBgZuBgYH/gYGB/4GBgf+BgYH/gYGBzIGBgSGBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgRaBgYH3
-gYGB/4GBgf+BgYEwgYGBAoGBgeOBgYH/gYGB/4GBgVOBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBhoGBgf+BgYH/
-gYGB/4GBgf+BgYHpgYGBKIGBgQCBgYEAgYGBAIGBgSqBgYHqgYGB/4GBgf+BgYH/gYGB/4GBgYuBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBVoGBgf+BgYH/gYGB4oGBgQH///8AgYGBoYGBgf+BgYH/gYGBoYGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBN4GBgbaBgYH/gYGB/4GBgf+BgYHSgYGBB4GBgQCBgYEIgYGB1YGBgf+BgYH/
-gYGB/4GBgcSBgYFAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYGkgYGB/4GBgf+BgYGfgYGBAP///wCBgYFP
-gYGB/4GBgf+BgYHsgYGBCYGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgW2BgYH/gYGB/4GBge2BgYEO
-gYGBAIGBgRCBgYHvgYGB/4GBgf+BgYF3gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBDIGBge6BgYH/
-gYGB/4GBgU2BgYEA////AIGBgQqBgYHugYGB/4GBgf+BgYFbgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBIIGBgf+BgYH/gYGB4IGBgQiBgYEAgYGBC4GBgeKBgYH/gYGB/4GBgRuBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYFfgYGB/4GBgf+BgYHsgYGBCYGBgQD///8AgYGBAIGBgZeBgYH/gYGB/4GBgdCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEqgYGB/4GBgf+BgYHbgYGBAYGBgQCBgYEDgYGB3oGBgf+BgYH/
-gYGBJoGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgdOBgYH/gYGB/4GBgZWBgYEAgYGBAP///wCBgYEA
-gYGBLIGBgf+BgYH/gYGB/4GBgUaBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgYiBgYH/gYGB/4GBgc6BgYEA
-gYGBAIGBgQCBgYHRgYGB/4GBgf+BgYGFgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYFKgYGB/4GBgf+BgYH/
-gYGBK4GBgQCBgYEA////AIGBgQCBgYEAgYGBtIGBgf+BgYH/gYGBzoGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEcgYGBR4GBgXOBgYGdgYGBuYGBgc2BgYHX
-gYGB/4GBgf+BgYH/gYGBg4GBgQCBgYEAgYGBAIGBgYWBgYH/gYGB/4GBgf+BgYHWgYGBy4GBgbeBgYGa
-gYGBcIGBgUWBgYEZgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgdKBgYH/gYGB/4GBgbGBgYEAgYGBAIGBgQD///8AgYGBAIGBgQCBgYE0gYGB/4GBgf+BgYH/
-gYGBZIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQqBgYFggYGBtoGBge+BgYH/
-gYGB/4GBgf+BgYH/gYGB/4GBgf+BgYH/gYGB/4GBgdyBgYEKgYGBAIGBgQCBgYEAgYGBCoGBgdyBgYH/
-gYGB/4GBgf+BgYH/gYGB/4GBgf+BgYH/gYGB/4GBgeyBgYG1gYGBX4GBgQqBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYFogYGB/4GBgf+BgYH/gYGBMYGBgQCBgYEAgYGBAP///wCBgYEA
-gYGBAIGBgQCBgYGlgYGB/4GBgf+BgYHsgYGBFIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYFf
-gYGB2IGBgf+BgYH/gYGB/4GBgf+BgYH/gYGB/4GBgf+BgYH/gYGB/4GBgf+BgYG1gYGBJYGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBJIGBgbOBgYH/gYGB/4GBgf+BgYH/gYGB/4GBgf+BgYH/gYGB/4GBgf+BgYH/
-gYGB2IGBgWGBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBFYGBge6BgYH/gYGB/4GBgaGBgYEA
-gYGBAIGBgQCBgYEA////AIGBgQCBgYEAgYGBAIGBgRqBgYH8gYGB/4GBgf+BgYG2gYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEKgYGBqYGBgf+BgYH/gYGB/4GBgf+BgYH/gYGB44GBgbWBgYGTgYGBboGBgVmBgYFM
-gYGBLIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgSyBgYFNgYGBWoGBgXCBgYGT
-gYGBtYGBgeOBgYH/gYGB/4GBgf+BgYH/gYGB/4GBgauBgYELgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYG6
-gYGB/4GBgf+BgYH7gYGBGIGBgQCBgYEAgYGBAIGBgQD///8AgYGBAIGBgQCBgYEAgYGBAIGBgWWBgYH/
-gYGB/4GBgf+BgYF0gYGBAIGBgQCBgYEAgYGBAIGBgcGBgYH/gYGB/4GBgf+BgYH4gYGBoIGBgUGBgYEQ
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBEIGBgUCBgYGegYGB94GBgf+BgYH/gYGB/4GBgcKBgYEA
-gYGBAIGBgQCBgYEAgYGBeIGBgf+BgYH/gYGB/4GBgWOBgYEAgYGBAIGBgQCBgYEAgYGBAP///wCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgbOBgYH/gYGB/4GBgf+BgYFNgYGBAIGBgQCBgYGBgYGB/4GBgf+BgYH/
-gYGBrIGBgSuBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEp
-gYGBrIGBgf+BgYH/gYGB/4GBgX6BgYEAgYGBAIGBgVCBgYH/gYGB/4GBgf+BgYGwgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEA////AIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBE4GBgeOBgYH/gYGB/4GBgfeBgYEk
-gYGBHYGBgf+BgYH/gYGB/4GBgZqBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBnoGBgf+BgYH/gYGB/4GBgRmBgYEngYGB+YGBgf+BgYH/
-gYGB4IGBgRKBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQD///8AgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBMYGBgf+BgYH/gYGB/4GBgeiBgYHbgYGB/4GBgf+BgYHfgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGB4IGBgf+BgYH/
-gYGB2YGBgemBgYH/gYGB/4GBgf6BgYEugYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAP///wCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBTYGBgf+BgYH/gYGB/4GBgf+BgYH/gYGB7oGBgTmBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYE7gYGB74GBgf+BgYH/gYGB/4GBgf+BgYH/gYGBS4GBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEA////AIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBWYGBgf+BgYH/
-gYGB/4GBgf+BgYG6gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYG9gYGB/4GBgf+BgYH/gYGB/4GBgViBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQD///8AgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBU4GBgf2BgYH/gYGB/4GBgfmBgYGigYGBE4GBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEUgYGBpIGBgfmBgYH/
-gYGB/4GBgfyBgYFRgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAP///wCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBOIGBgeSBgYH/gYGB/4GBgf+BgYHl
-gYGBYIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBYYGBgeaBgYH/gYGB/4GBgf+BgYHigYGBNoGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEA////AIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBIYGBgbyBgYH/gYGB/4GBgf+BgYH/gYGBuoGBgUmBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBS4GBgbyBgYH/gYGB/4GBgf+BgYH/gYGBuoGBgR+BgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQD///8AgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgXiBgYH7gYGB/4GBgf+BgYH/gYGB/4GBgb2BgYFW
-gYGBCoGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYELgYGBWIGBgb+BgYH/gYGB/4GBgf+BgYH/gYGB+oGBgXaBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAP///wCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgSaBgYGu
-gYGB/4GBgf+BgYH/gYGB/4GBgf+BgYHegYGBnoGBgUiBgYEZgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgRqBgYFJgYGBn4GBgeCBgYH/gYGB/4GBgf+BgYH/
-gYGB/4GBgayBgYElgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEA////AIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYFNgYGBvIGBgf+BgYH/gYGB/4GBgf+BgYH/gYGB/4GBge+BgYG7
-gYGBkIGBgXSBgYFXgYGBQ4GBgTiBgYE1gYGBOIGBgUOBgYFYgYGBdoGBgZGBgYG9gYGB8IGBgf+BgYH/
-gYGB/4GBgf+BgYH/gYGB/4GBgbqBgYFMgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQD///8AgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBRIGBgaqBgYH0
-gYGB/4GBgf+BgYH/gYGB/4GBgf+BgYH/gYGB/4GBgf+BgYH/gYGB/4GBgf2BgYH/gYGB/4GBgf+BgYH/
-gYGB/4GBgf+BgYH/gYGB/4GBgf+BgYH/gYGB84GBgaiBgYFDgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAP///wCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgSCBgYFhgYGBuYGBgeSBgYH/gYGB/4GBgf+BgYH/gYGB/4GBgf+BgYH/
-gYGB/4GBgf+BgYH/gYGB/4GBgf+BgYH/gYGB/4GBgf+BgYHkgYGBuIGBgWCBgYEfgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEA////AIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBEIGBgUiBgYFu
-gYGBlIGBgbaBgYHPgYGB4YGBgeyBgYHvgYGB7IGBgeGBgYHPgYGBtoGBgZSBgYFugYGBR4GBgRCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEA
-gYGBAIGBgQCBgYEAgYGBAIGBgQCBgYEAgYGBAIGBgQAADgEAAAMAAAABAEEAAAEBAAMAAAABAEIAAAEC
-AAMAAAAEAABDvgEDAAMAAAABAAEAAAEGAAMAAAABAAIAAAERAAQAAAABAAAACAESAAMAAAABAAEAAAEV
-AAMAAAABAAQAAAEWAAMAAAABAEIAAAEXAAQAAAABAABDCAEcAAMAAAABAAEAAAFSAAMAAAABAAIAAAFT
-AAMAAAAEAABDxodzAAcAAAxIAABDzgAAAAAACAAIAAgACAABAAEAAQABAAAMSExpbm8CEAAAbW50clJH
-QiBYWVogB84AAgAJAAYAMQAAYWNzcE1TRlQAAAAASUVDIHNSR0IAAAAAAAAAAAAAAAAAAPbWAAEAAAAA
-0y1IUCAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAARY3BydAAA
-AVAAAAAzZGVzYwAAAYQAAABsd3RwdAAAAfAAAAAUYmtwdAAAAgQAAAAUclhZWgAAAhgAAAAUZ1hZWgAA
-AiwAAAAUYlhZWgAAAkAAAAAUZG1uZAAAAlQAAABwZG1kZAAAAsQAAACIdnVlZAAAA0wAAACGdmlldwAA
-A9QAAAAkbHVtaQAAA/gAAAAUbWVhcwAABAwAAAAkdGVjaAAABDAAAAAMclRSQwAABDwAAAgMZ1RSQwAA
-BDwAAAgMYlRSQwAABDwAAAgMdGV4dAAAAABDb3B5cmlnaHQgKGMpIDE5OTggSGV3bGV0dC1QYWNrYXJk
-IENvbXBhbnkAAGRlc2MAAAAAAAAAEnNSR0IgSUVDNjE5NjYtMi4xAAAAAAAAAAAAAAASc1JHQiBJRUM2
-MTk2Ni0yLjEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFhZ
-WiAAAAAAAADzUQABAAAAARbMWFlaIAAAAAAAAAAAAAAAAAAAAABYWVogAAAAAAAAb6IAADj1AAADkFhZ
-WiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9kZXNjAAAAAAAAABZJRUMgaHR0cDov
-L3d3dy5pZWMuY2gAAAAAAAAAAAAAABZJRUMgaHR0cDovL3d3dy5pZWMuY2gAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAZGVzYwAAAAAAAAAuSUVDIDYxOTY2LTIuMSBEZWZh
-dWx0IFJHQiBjb2xvdXIgc3BhY2UgLSBzUkdCAAAAAAAAAAAAAAAuSUVDIDYxOTY2LTIuMSBEZWZhdWx0
-IFJHQiBjb2xvdXIgc3BhY2UgLSBzUkdCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGRlc2MAAAAAAAAALFJl
-ZmVyZW5jZSBWaWV3aW5nIENvbmRpdGlvbiBpbiBJRUM2MTk2Ni0yLjEAAAAAAAAAAAAAACxSZWZlcmVu
-Y2UgVmlld2luZyBDb25kaXRpb24gaW4gSUVDNjE5NjYtMi4xAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAB2aWV3AAAAAAATpP4AFF8uABDPFAAD7cwABBMLAANcngAAAAFYWVogAAAAAABMCVYAUAAAAFcf521l
-YXMAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAKPAAAAAnNpZyAAAAAAQ1JUIGN1cnYAAAAAAAAEAAAA
-AAUACgAPABQAGQAeACMAKAAtADIANwA7AEAARQBKAE8AVABZAF4AYwBoAG0AcgB3AHwAgQCGAIsAkACV
-AJoAnwCkAKkArgCyALcAvADBAMYAywDQANUA2wDgAOUA6wDwAPYA+wEBAQcBDQETARkBHwElASsBMgE4
-AT4BRQFMAVIBWQFgAWcBbgF1AXwBgwGLAZIBmgGhAakBsQG5AcEByQHRAdkB4QHpAfIB+gIDAgwCFAId
-AiYCLwI4AkECSwJUAl0CZwJxAnoChAKOApgCogKsArYCwQLLAtUC4ALrAvUDAAMLAxYDIQMtAzgDQwNP
-A1oDZgNyA34DigOWA6IDrgO6A8cD0wPgA+wD+QQGBBMEIAQtBDsESARVBGMEcQR+BIwEmgSoBLYExATT
-BOEE8AT+BQ0FHAUrBToFSQVYBWcFdwWGBZYFpgW1BcUF1QXlBfYGBgYWBicGNwZIBlkGagZ7BowGnQav
-BsAG0QbjBvUHBwcZBysHPQdPB2EHdAeGB5kHrAe/B9IH5Qf4CAsIHwgyCEYIWghuCIIIlgiqCL4I0gjn
-CPsJEAklCToJTwlkCXkJjwmkCboJzwnlCfsKEQonCj0KVApqCoEKmAquCsUK3ArzCwsLIgs5C1ELaQuA
-C5gLsAvIC+EL+QwSDCoMQwxcDHUMjgynDMAM2QzzDQ0NJg1ADVoNdA2ODakNww3eDfgOEw4uDkkOZA5/
-DpsOtg7SDu4PCQ8lD0EPXg96D5YPsw/PD+wQCRAmEEMQYRB+EJsQuRDXEPURExExEU8RbRGMEaoRyRHo
-EgcSJhJFEmQShBKjEsMS4xMDEyMTQxNjE4MTpBPFE+UUBhQnFEkUahSLFK0UzhTwFRIVNBVWFXgVmxW9
-FeAWAxYmFkkWbBaPFrIW1hb6Fx0XQRdlF4kXrhfSF/cYGxhAGGUYihivGNUY+hkgGUUZaxmRGbcZ3RoE
-GioaURp3Gp4axRrsGxQbOxtjG4obshvaHAIcKhxSHHscoxzMHPUdHh1HHXAdmR3DHeweFh5AHmoelB6+
-HukfEx8+H2kflB+/H+ogFSBBIGwgmCDEIPAhHCFIIXUhoSHOIfsiJyJVIoIiryLdIwojOCNmI5QjwiPw
-JB8kTSR8JKsk2iUJJTglaCWXJccl9yYnJlcmhya3JugnGCdJJ3onqyfcKA0oPyhxKKIo1CkGKTgpaymd
-KdAqAio1KmgqmyrPKwIrNitpK50r0SwFLDksbiyiLNctDC1BLXYtqy3hLhYuTC6CLrcu7i8kL1ovkS/H
-L/4wNTBsMKQw2zESMUoxgjG6MfIyKjJjMpsy1DMNM0YzfzO4M/E0KzRlNJ402DUTNU01hzXCNf02NzZy
-Nq426TckN2A3nDfXOBQ4UDiMOMg5BTlCOX85vDn5OjY6dDqyOu87LTtrO6o76DwnPGU8pDzjPSI9YT2h
-PeA+ID5gPqA+4D8hP2E/oj/iQCNAZECmQOdBKUFqQaxB7kIwQnJCtUL3QzpDfUPARANER0SKRM5FEkVV
-RZpF3kYiRmdGq0bwRzVHe0fASAVIS0iRSNdJHUljSalJ8Eo3Sn1KxEsMS1NLmkviTCpMcky6TQJNSk2T
-TdxOJU5uTrdPAE9JT5NP3VAnUHFQu1EGUVBRm1HmUjFSfFLHUxNTX1OqU/ZUQlSPVNtVKFV1VcJWD1Zc
-VqlW91dEV5JX4FgvWH1Yy1kaWWlZuFoHWlZaplr1W0VblVvlXDVchlzWXSddeF3JXhpebF69Xw9fYV+z
-YAVgV2CqYPxhT2GiYfViSWKcYvBjQ2OXY+tkQGSUZOllPWWSZedmPWaSZuhnPWeTZ+loP2iWaOxpQ2ma
-afFqSGqfavdrT2una/9sV2yvbQhtYG25bhJua27Ebx5veG/RcCtwhnDgcTpxlXHwcktypnMBc11zuHQU
-dHB0zHUodYV14XY+dpt2+HdWd7N4EXhueMx5KnmJeed6RnqlewR7Y3vCfCF8gXzhfUF9oX4BfmJ+wn8j
-f4R/5YBHgKiBCoFrgc2CMIKSgvSDV4O6hB2EgITjhUeFq4YOhnKG14c7h5+IBIhpiM6JM4mZif6KZIrK
-izCLlov8jGOMyo0xjZiN/45mjs6PNo+ekAaQbpDWkT+RqJIRknqS45NNk7aUIJSKlPSVX5XJljSWn5cK
-l3WX4JhMmLiZJJmQmfyaaJrVm0Kbr5wcnImc951kndKeQJ6unx2fi5/6oGmg2KFHobaiJqKWowajdqPm
-pFakx6U4pammGqaLpv2nbqfgqFKoxKk3qamqHKqPqwKrdavprFys0K1ErbiuLa6hrxavi7AAsHWw6rFg
-sdayS7LCszizrrQltJy1E7WKtgG2ebbwt2i34LhZuNG5SrnCuju6tbsuu6e8IbybvRW9j74KvoS+/796
-v/XAcMDswWfB48JfwtvDWMPUxFHEzsVLxcjGRsbDx0HHv8g9yLzJOsm5yjjKt8s2y7bMNcy1zTXNtc42
-zrbPN8+40DnQutE80b7SP9LB00TTxtRJ1MvVTtXR1lXW2Ndc1+DYZNjo2WzZ8dp22vvbgNwF3IrdEN2W
-3hzeot8p36/gNuC94UThzOJT4tvjY+Pr5HPk/OWE5g3mlucf56noMui86Ubp0Opb6uXrcOv77IbtEe2c
-7ijutO9A78zwWPDl8XLx//KM8xnzp/Q09ML1UPXe9m32+/eK+Bn4qPk4+cf6V/rn+3f8B/yY/Sn9uv5L
-/tz/bf//0iIjJCVaJGNsYXNzbmFtZVgkY2xhc3Nlc18QEE5TQml0bWFwSW1hZ2VSZXCjJicoXxAQTlNC
-aXRtYXBJbWFnZVJlcFpOU0ltYWdlUmVwWE5TT2JqZWN00iIjKitXTlNBcnJheaIqKNIiIy0uXk5TTXV0
-YWJsZUFycmF5oy0qKNMwMQkyMzRXTlNXaGl0ZVxOU0NvbG9yU3BhY2VEMCAwABADgAvSIiM2N1dOU0Nv
-bG9yojYo0iIjOTpXTlNJbWFnZaI5KF8QD05TS2V5ZWRBcmNoaXZlctE9PlRyb290gAEACAARABoAIwAt
-ADIANwBFAEsAVABbAGgAbwB3AHkAfgCAAIIAhwCSAJQAlgCYAJ0AoACiAKQApgCoAK0AxADGAMhQ4lDn
-UPJQ+1EOURJRJVEwUTlRPlFGUUlRTlFdUWFRaFFwUX1RglGEUYZRi1GTUZZRm1GjUaZRuFG7UcAAAAAA
-AAACAQAAAAAAAAA/AAAAAAAAAAAAAAAAAABRwg
-</mutableData>
-        </image>
         <image name="location_icon.png" width="80" height="128"/>
     </resources>
 </document>
