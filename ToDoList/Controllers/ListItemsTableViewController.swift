@@ -32,6 +32,8 @@ class ListItemsTableViewController: UITableViewController {
     
     override func viewWillAppear(animated: Bool) {
         hideOrUnhideNoRecordsLabel()
+        
+        tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -146,6 +148,7 @@ class ListItemsTableViewController: UITableViewController {
             var items = UserLocationManager.userLocationManager.getCurrentUserInfo().items
             var selectedListItem = items[selectedRow!]
             
+            locationDetailViewController.selectedListItem = selectedListItem
             locationDetailViewController.selectedItemIndex = selectedRow!
             
             //Deselect row

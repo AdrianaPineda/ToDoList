@@ -56,6 +56,8 @@ class UserLocationManager: NSObject {
             
             var currentListItem = ListItem()
             currentListItem.name = itemName
+            currentListItem.message = itemMessage
+            currentListItem.cellphoneNumber = itemCellphone
             
             var currentLocation = Location()
             currentLocation.latitude = itemAltitude
@@ -76,6 +78,17 @@ class UserLocationManager: NSObject {
         return userInfo
     }
     
+    func updateLocationInfo(index: Int, name: NSString, message: NSString, cellphoneNumber: NSNumber) -> Bool {
+        
+        var itemNum = NSString(format: "item_%d_", (index+1))
+        
+        UsersDefaultManager.setObject(name, forKey:(itemNum + "_name"))
+        UsersDefaultManager.setObject(message, forKey:(itemNum + "_message"))
+        UsersDefaultManager.setObject(cellphoneNumber, forKey:(itemNum + "_cellphone"))
+        
+        return true
+    }
+    
     func updateUserInfo(name:NSString, cellphone:Int) -> Void {
         userInfo.name = name
         userInfo.cellphoneNumber = cellphone
@@ -89,7 +102,6 @@ class UserLocationManager: NSObject {
     func addLocationForUserInfo(listItem: ListItem) -> Void {
         
         // Show confirmation alert message
-        
         
         userInfo.items.append(listItem)
         
@@ -128,7 +140,18 @@ class UserLocationManager: NSObject {
         
         if locations.count > 0 {
             //SEND Messages
-//            MessageManager.sendMessage("TEsT message", cellphoneNumber: userInfo.cellphoneNumber)
+            
+            for var index = 0; index < locations.count; i++ {
+                var currentItem = locations[index]
+                
+                if currentItem.shouldSendReminder() {
+                    MessageManager.sendMessage(currentItem.message, cellphoneNumber: currentItem.cellphoneNumber)
+                    
+                    currentItem.updateLastReminder()
+                }
+                
+            }
+            
         }
     }
     

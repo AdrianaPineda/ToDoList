@@ -20,18 +20,14 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UEq-yd-quV">
                                 <rect key="frame" x="0.0" y="507" width="600" height="44"/>
                                 <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="IzW-H6-pvZ"/>
                                     <barButtonItem title="Add location" id="9sq-1R-OTX">
                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <action selector="addLocation:" destination="Vig-nI-ZOn" id="PLJ-71-yx1"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem title="Reset locations" id="fkz-ag-lMm">
-                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <connections>
-                                            <action selector="resetLocations:" destination="Vig-nI-ZOn" id="iLJ-tI-tVK"/>
-                                        </connections>
-                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="69d-Md-MRt"/>
                                 </items>
                                 <color key="barTintColor" red="0.92941176470588238" green="0.10980392156862745" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </toolbar>
@@ -172,7 +168,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gnm-1G-2t4">
                                 <rect key="frame" x="16" y="395" width="568" height="30"/>
-                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
                                 <state key="normal" title="Update location">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -211,6 +207,8 @@
                             <constraint firstItem="Gnm-1G-2t4" firstAttribute="leading" secondItem="5b1-U5-9qj" secondAttribute="leadingMargin" id="yyJ-4e-rzl"/>
                         </constraints>
                     </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="600"/>
                     <connections>
                         <outlet property="cellphoneNumber" destination="zeq-td-VR9" id="Y5L-WJ-yTH"/>
                         <outlet property="message" destination="o5n-0h-H4L" id="lty-5v-OCF"/>

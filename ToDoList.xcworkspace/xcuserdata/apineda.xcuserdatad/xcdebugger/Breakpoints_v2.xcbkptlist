@@ -14,7 +14,9 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "53"
-            endingLineNumber = "53">
+            endingLineNumber = "53"
+            landmarkName = "locationManager(_:didUpdateLocations:)"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -24,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ToDoList/Controllers/ListItemsTableViewController.swift"
-            timestampString = "447042044.54682"
+            timestampString = "447051775.794913"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
             landmarkName = "tableView(_:cellForRowAtIndexPath:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -76,7 +78,9 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "124"
-            endingLineNumber = "124">
+            endingLineNumber = "124"
+            landmarkName = "alertView(_:clickedButtonAtIndex:)"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -86,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ToDoList/Controllers/ListItemsTableViewController.swift"
-            timestampString = "447044579.899086"
+            timestampString = "447051775.794913"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "113"
-            endingLineNumber = "113"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
             landmarkName = "tableView(_:commitEditingStyle:forRowAtIndexPath:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -102,11 +106,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ToDoList/Controllers/UserLocationManager.swift"
-            timestampString = "447043208.792456"
+            timestampString = "447054096.567625"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "179"
-            endingLineNumber = "179">
+            startingLineNumber = "191"
+            endingLineNumber = "191">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -120,7 +124,9 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "78"
-            endingLineNumber = "78">
+            endingLineNumber = "78"
+            landmarkName = "mapView(_:didUpdateUserLocation:)"
+            landmarkType = "5">
             <Locations>
                <Location
                   shouldBeEnabled = "No"
@@ -160,11 +166,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ToDoList/Controllers/UserLocationManager.swift"
-            timestampString = "447043208.792456"
+            timestampString = "447054096.567625"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "183"
-            endingLineNumber = "183">
+            startingLineNumber = "195"
+            endingLineNumber = "195">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -206,11 +212,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ToDoList/Controllers/UserLocationManager.swift"
-            timestampString = "447043208.792456"
+            timestampString = "447054096.567625"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "162"
-            endingLineNumber = "162">
+            startingLineNumber = "174"
+            endingLineNumber = "174">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -240,7 +246,9 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "73"
-            endingLineNumber = "73">
+            endingLineNumber = "73"
+            landmarkName = "mapView(_:didUpdateUserLocation:)"
+            landmarkType = "5">
             <Locations>
                <Location
                   shouldBeEnabled = "No"
@@ -343,13 +351,45 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ToDoList/Controllers/LocationDetailViewController.swift"
-            timestampString = "447043613.81023"
+            filePath = "ToDoList/Controllers/UserLocationManager.swift"
+            timestampString = "447054096.567625"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "viewDidLoad()"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
+            landmarkName = "updateLocationInfo(_:name:message:cellphoneNumber:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ToDoList/Controllers/UserLocationManager.swift"
+            timestampString = "447053759.177712"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "loadUserLocationConfig()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ToDoList/Controllers/UserLocationManager.swift"
+            timestampString = "447053761.030388"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "loadUserLocationConfig()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
