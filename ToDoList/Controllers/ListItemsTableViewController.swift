@@ -92,12 +92,12 @@ class ListItemsTableViewController: UITableViewController {
         return true
     }
 
-//    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        return "Saved Locations"
-//    }
-
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 0.01
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+
     }
     
     // Override to support editing the table view.
