@@ -15,6 +15,8 @@
 		0135D6F31AA62F1F00912C83 /* profile_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0135D6F21AA62F1F00912C83 /* profile_icon@2x.png */; };
 		0135D6F61AA6390000912C83 /* reminders_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0135D6F41AA6390000912C83 /* reminders_icon@2x.png */; };
 		0135D6F71AA6390000912C83 /* search_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0135D6F51AA6390000912C83 /* search_icon@2x.png */; };
+		0135D6F91AA6529600912C83 /* LocationDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0135D6F81AA6529600912C83 /* LocationDetailTableViewController.swift */; };
+		0135D6FB1AA654F000912C83 /* twilio-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 0135D6FA1AA654F000912C83 /* twilio-logo.png */; };
 		0145A26C1AA21AA70003FE7C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0145A26B1AA21AA70003FE7C /* Images.xcassets */; };
 		0145A2761AA225460003FE7C /* rsz_profile_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0145A2751AA225460003FE7C /* rsz_profile_icon.png */; };
 		016CACD01A9D121C00D37729 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016CACCF1A9D121C00D37729 /* AppDelegate.swift */; };
@@ -69,6 +71,8 @@
 		0135D6F21AA62F1F00912C83 /* profile_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "profile_icon@2x.png"; sourceTree = "<group>"; };
 		0135D6F41AA6390000912C83 /* reminders_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reminders_icon@2x.png"; sourceTree = "<group>"; };
 		0135D6F51AA6390000912C83 /* search_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "search_icon@2x.png"; sourceTree = "<group>"; };
+		0135D6F81AA6529600912C83 /* LocationDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationDetailTableViewController.swift; sourceTree = "<group>"; };
+		0135D6FA1AA654F000912C83 /* twilio-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "twilio-logo.png"; sourceTree = "<group>"; };
 		0145A26B1AA21AA70003FE7C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0145A2751AA225460003FE7C /* rsz_profile_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rsz_profile_icon.png; sourceTree = "<group>"; };
 		016CACCA1A9D121C00D37729 /* ToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -231,6 +235,7 @@
 		01F9F2431A9FEE6D000143A9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0135D6FA1AA654F000912C83 /* twilio-logo.png */,
 				0135D6F21AA62F1F00912C83 /* profile_icon@2x.png */,
 				0135D6F01AA62F0B00912C83 /* profile_icon2@2x.png */,
 				0135D6EE1AA6204B00912C83 /* circle-user-7@2x.png */,
@@ -259,6 +264,7 @@
 			children = (
 				01F9F2241A9E4487000143A9 /* ListItemsTableViewController.swift */,
 				01AC9FAC1AA54E8F00BB4C1D /* LocationDetailViewController.swift */,
+				0135D6F81AA6529600912C83 /* LocationDetailTableViewController.swift */,
 			);
 			name = ListItems;
 			sourceTree = "<group>";
@@ -399,6 +405,7 @@
 				016CACD51A9D121C00D37729 /* Main.storyboard in Resources */,
 				01F9F2451A9FEE6D000143A9 /* location_icon.png in Resources */,
 				0135D6F31AA62F1F00912C83 /* profile_icon@2x.png in Resources */,
+				0135D6FB1AA654F000912C83 /* twilio-logo.png in Resources */,
 				016CACDA1A9D121C00D37729 /* LaunchScreen.xib in Resources */,
 				01AC9FB31AA5505700BB4C1D /* search_icon2.png in Resources */,
 				01AC9FB21AA5505700BB4C1D /* reminders_icon2.png in Resources */,
@@ -467,6 +474,7 @@
 				01F9F24E1AA0366B000143A9 /* UserInfoViewController.swift in Sources */,
 				01F9F21F1A9E4343000143A9 /* Location.swift in Sources */,
 				01F9F2251A9E4487000143A9 /* ListItemsTableViewController.swift in Sources */,
+				0135D6F91AA6529600912C83 /* LocationDetailTableViewController.swift in Sources */,
 				016CACD01A9D121C00D37729 /* AppDelegate.swift in Sources */,
 				01F9F2471A9FF415000143A9 /* UserLocationManager.swift in Sources */,
 			);

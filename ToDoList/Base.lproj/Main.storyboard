@@ -172,6 +172,7 @@
                                 </state>
                                 <connections>
                                     <action selector="updateLocation:" destination="cjC-By-k0G" eventType="touchUpInside" id="bUB-I8-kzx"/>
+                                    <segue destination="wT6-Vv-pbD" kind="show" id="0Pf-Fk-lE5"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zeq-td-VR9">
@@ -216,6 +217,32 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ULv-9I-rOH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2751" y="918"/>
+        </scene>
+        <!--Location Detail Table View Controller-->
+        <scene sceneID="zCg-Ua-a1Z">
+            <objects>
+                <tableViewController id="wT6-Vv-pbD" customClass="LocationDetailTableViewController" customModule="ToDoList" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="o63-Pc-L9g">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="locationDetail" id="zzn-H8-Pfd">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zzn-H8-Pfd" id="FGQ-II-qkR">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="wT6-Vv-pbD" id="TuQ-4y-0Yv"/>
+                            <outlet property="delegate" destination="wT6-Vv-pbD" id="pz5-OS-qzu"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yO9-TQ-c7k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2751" y="1591"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="HH4-4U-vLc">
