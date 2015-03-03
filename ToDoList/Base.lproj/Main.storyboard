@@ -56,7 +56,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="UEq-yd-quV" secondAttribute="trailing" constant="-16" id="z3f-gh-Spl"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="search" id="pr8-PX-90G"/>
+                    <tabBarItem key="tabBarItem" title="Search" image="search_icon.png" id="pr8-PX-90G"/>
                     <connections>
                         <outlet property="addLocation" destination="9sq-1R-OTX" id="YjN-Mc-sTw"/>
                         <outlet property="mapView" destination="hbv-Hz-JWW" id="Nei-DG-hge"/>
@@ -66,7 +66,7 @@
             </objects>
             <point key="canvasLocation" x="1229" y="227"/>
         </scene>
-        <!--User Info View Controller-->
+        <!--User info-->
         <scene sceneID="I0e-pA-zfE">
             <objects>
                 <tableViewController id="4IH-Nf-EPQ" customClass="UserInfoViewController" customModule="ToDoList" customModuleProvider="target" sceneMemberID="viewController">
@@ -87,9 +87,7 @@
                             <outlet property="delegate" destination="4IH-Nf-EPQ" id="WGP-tQ-CYd"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" systemItem="contacts" id="sJE-D0-2mM">
-                        <inset key="imageInsets" minX="0.0" minY="15" maxX="0.0" maxY="-15"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="User info" image="profile_icon.png" id="sJE-D0-2mM"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s6u-H3-Fxy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -239,11 +237,11 @@
             </objects>
             <point key="canvasLocation" x="409" y="558"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Locations-->
         <scene sceneID="yWc-Lf-abp">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5s8-91-80w" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="downloads" id="pYy-mG-d53"/>
+                    <tabBarItem key="tabBarItem" title="Locations" image="reminders_icon.png" id="pYy-mG-d53"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="yKy-NR-URx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -261,5 +259,8 @@
     </scenes>
     <resources>
         <image name="location_icon.png" width="80" height="128"/>
+        <image name="profile_icon.png" width="32" height="33"/>
+        <image name="reminders_icon.png" width="31" height="35"/>
+        <image name="search_icon.png" width="27" height="36"/>
     </resources>
 </document>

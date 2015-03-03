@@ -13,7 +13,7 @@ class MessageManager: NSObject {
     class func sendMessage(message: NSString, cellphoneNumber: NSNumber) -> Void {
         
         //Call to backend
-        var address: NSString = "http://39ccedf1.ngrok.com/set-location"
+        var address: NSString = "http://29af880b.ngrok.com/set-location"
         var url: NSURL = NSURL(string: address)!
         
         var request:ASIFormDataRequest = ASIFormDataRequest.requestWithURL(url) as ASIFormDataRequest
@@ -21,15 +21,15 @@ class MessageManager: NSObject {
         request.setPostValue(cellphoneNumber, forKey: "call_receiver")
         request.setPostValue(message, forKey: "location_message")
         
-        request.startSynchronous()
+        request.startAsynchronous()
         
-        NSLog("STATUS %d", request.responseStatusCode)
-        if request.error != nil && request.responseStatusCode != 401 {
-            NSLog("ERROR")
-            NSLog(request.error.localizedDescription)
-        }
-        
-        var body = request.responseString()
+//        NSLog("STATUS %d", request.responseStatusCode)
+//        if request.error != nil && request.responseStatusCode != 401 {
+//            NSLog("ERROR")
+//            NSLog(request.error.localizedDescription)
+//        }
+//        
+//        var body = request.responseString()
         //        NSLog(parseBodyAsJSON(body))
     }
     

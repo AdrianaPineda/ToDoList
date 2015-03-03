@@ -64,17 +64,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         } else {
             var centerLocation: CLLocationCoordinate2D = mapView.centerCoordinate
             
-            /* TODO delete
-            var alertViewSuccessful = UIAlertController(title: "Location Changed", message: "Location added successfully", preferredStyle: UIAlertControllerStyle.Alert)
-            alertViewSuccessful.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
-            presentViewController(alertViewSuccessful, animated: true, completion: nil)
-            */
-            
-            UserLocationManager.userLocationManager.checkForLocationsNearBy(centerLocation.latitude, currentLongitude: centerLocation.longitude)
-            
-            //TEST
-//            var items = UserLocationManager.userLocationManager.getCurrentUserInfo().items
-//            var locationIsNearBy = (items[0]).isLocationNearCurrentLocation(38.898556, longitude: -77.037852)
+//            UserLocationManager.userLocationManager.checkForLocationsNearBy(centerLocation.latitude, currentLongitude: centerLocation.longitude)
         }
         
     }

@@ -51,7 +51,7 @@ class ListItem: NSObject {
         var currentDate = NSDate()
         var currentDiff = currentDate.timeIntervalSinceNow
         
-        if lastReminder != nil {
+        if (lastReminder != nil) {
             var lastReminderDiff = lastReminder?.timeIntervalSinceNow
             
             var differenceInSeconds = currentDiff - lastReminderDiff!

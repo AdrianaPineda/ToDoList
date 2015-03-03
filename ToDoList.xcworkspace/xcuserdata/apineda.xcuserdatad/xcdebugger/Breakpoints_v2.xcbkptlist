@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ToDoList/Controllers/MapViewController.swift"
-            timestampString = "447042044.54682"
+            timestampString = "447103020.255972"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "124"
-            endingLineNumber = "124"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
             landmarkName = "alertView(_:clickedButtonAtIndex:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -120,11 +120,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ToDoList/Controllers/MapViewController.swift"
-            timestampString = "447042044.54682"
+            timestampString = "447103020.255972"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
             landmarkName = "mapView(_:didUpdateUserLocation:)"
             landmarkType = "5">
             <Locations>
@@ -211,20 +211,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ToDoList/Controllers/UserLocationManager.swift"
-            timestampString = "447054096.567625"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "174"
-            endingLineNumber = "174">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "ToDoList/MessageManager.swift"
             timestampString = "447042044.54682"
             startingColumnNumber = "9223372036854775807"
@@ -238,47 +224,17 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ToDoList/Controllers/MapViewController.swift"
-            timestampString = "447042044.54682"
+            timestampString = "447103020.255972"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
             landmarkName = "mapView(_:didUpdateUserLocation:)"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ToDoList.MapViewController.mapView (ToDoList.MapViewController)(Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.MKMapView&gt;, didUpdateUserLocation : Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.MKUserLocation&gt;) -&gt; ()"
-                  moduleName = "ToDoList"
-                  urlString = "file:///Users/apineda/Documents/Twilio/Application/ToDoList/ToDoList/Controllers/MapViewController.swift"
-                  timestampString = "447020464.450118"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "77"
-                  endingLineNumber = "77"
-                  offsetFromSymbolStart = "1824">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ToDoList.MapViewController.mapView (ToDoList.MapViewController)(Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.MKMapView&gt;, didUpdateUserLocation : Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.MKUserLocation&gt;) -&gt; ()"
-                  moduleName = "ToDoList"
-                  urlString = "file:///Users/apineda/Documents/Twilio/Application/ToDoList/ToDoList/Controllers/MapViewController.swift"
-                  timestampString = "447020464.450297"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "77"
-                  endingLineNumber = "77"
-                  offsetFromSymbolStart = "1856">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -319,38 +275,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ToDoList/MessageManager.swift"
-            timestampString = "447042496.342008"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
-            landmarkName = "sendMessage(_:cellphoneNumber:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ToDoList/MessageManager.swift"
-            timestampString = "447042520.364439"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "sendMessage(_:cellphoneNumber:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "ToDoList/Controllers/UserLocationManager.swift"
             timestampString = "447054096.567625"
             startingColumnNumber = "9223372036854775807"
@@ -368,12 +292,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ToDoList/Controllers/UserLocationManager.swift"
-            timestampString = "447053759.177712"
+            timestampString = "447102215.46804"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
-            landmarkName = "loadUserLocationConfig()"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
+            landmarkName = "checkForLocationsNearBy(_:currentLongitude:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -384,12 +308,44 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ToDoList/Controllers/UserLocationManager.swift"
-            timestampString = "447053761.030388"
+            timestampString = "447102386.330576"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
-            landmarkName = "loadUserLocationConfig()"
+            startingLineNumber = "148"
+            endingLineNumber = "148"
+            landmarkName = "checkForLocationsNearBy(_:currentLongitude:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ToDoList/Models/ListItem.swift"
+            timestampString = "447103000.471816"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "shouldSendReminder()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ToDoList/Models/ListItem.swift"
+            timestampString = "447103179.358167"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "updateLastReminder()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
