@@ -30,7 +30,7 @@ class LocationDetailTableViewController: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 4
+        return 2
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -56,7 +56,14 @@ class LocationDetailTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("locationDetail", forIndexPath: indexPath) as UITableViewCell
 
         // Configure the cell...
-        cell.textLabel?.text = "test"
+//        cell.textLabel?.text = "test"
+        
+        var screenWidth: CGFloat = UIScreen.mainScreen().bounds.size.width
+        
+        var nameTextField: UITextField = UITextField(frame: CGRectMake(10, 10, screenWidth, cell.bounds.size.height))
+        nameTextField.placeholder = "otro test"
+        
+        cell.contentView.addSubview(nameTextField)
         return cell
     }
     

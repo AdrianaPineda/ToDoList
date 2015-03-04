@@ -172,7 +172,6 @@
                                 </state>
                                 <connections>
                                     <action selector="updateLocation:" destination="cjC-By-k0G" eventType="touchUpInside" id="bUB-I8-kzx"/>
-                                    <segue destination="wT6-Vv-pbD" kind="show" id="0Pf-Fk-lE5"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zeq-td-VR9">
@@ -286,8 +285,8 @@
     </scenes>
     <resources>
         <image name="location_icon.png" width="80" height="128"/>
-        <image name="profile_icon.png" width="32" height="33"/>
-        <image name="reminders_icon.png" width="31" height="35"/>
-        <image name="search_icon.png" width="27" height="36"/>
+        <image name="profile_icon.png" width="26" height="26"/>
+        <image name="reminders_icon.png" width="25" height="28"/>
+        <image name="search_icon.png" width="22" height="29"/>
     </resources>
 </document>

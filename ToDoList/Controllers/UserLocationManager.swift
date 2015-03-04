@@ -145,7 +145,7 @@ class UserLocationManager: NSObject {
                 var currentItem = locations[index]
                 
                 if currentItem.shouldSendReminder() {
-                    MessageManager.sendMessage(currentItem.message, cellphoneNumber: currentItem.cellphoneNumber)
+                    MessageManager.sendMessage(currentItem.name, message: currentItem.message, cellphoneNumber: currentItem.cellphoneNumber)
                     
 //                    currentItem.updateLastReminder()
                 }

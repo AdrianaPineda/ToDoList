@@ -39,7 +39,7 @@ class LocationDetailViewController: UIViewController {
     }
     
     @IBAction func updateLocation(sender: AnyObject) {
-/*
+
         selectedListItem!.name = name.text
         selectedListItem!.message = message.text
         selectedListItem!.cellphoneNumber = cellphoneNumber.text.toInt()!
@@ -53,7 +53,7 @@ class LocationDetailViewController: UIViewController {
         }))
         
         presentViewController(alertViewSuccessful, animated: true, completion: nil)
-*/        
+
     }
 
     func dismissKeyboard() {

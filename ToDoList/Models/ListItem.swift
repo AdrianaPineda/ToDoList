@@ -30,7 +30,7 @@ class ListItem: NSObject {
         
         var d = R*c
         
-        if d < 2 {
+        if d < 1 {
             return true
         } else {
             return false

@@ -10,16 +10,17 @@ import UIKit
 
 class MessageManager: NSObject {
     
-    class func sendMessage(message: NSString, cellphoneNumber: NSNumber) -> Void {
+    class func sendMessage(name: NSString, message: NSString, cellphoneNumber: NSNumber) -> Void {
         
         //Call to backend
-        var address: NSString = "http://29af880b.ngrok.com/set-location"
+        var address: NSString = "http://3d32e69d.ngrok.com/set-location"
         var url: NSURL = NSURL(string: address)!
         
         var request:ASIFormDataRequest = ASIFormDataRequest.requestWithURL(url) as ASIFormDataRequest
         
         request.setPostValue(cellphoneNumber, forKey: "call_receiver")
         request.setPostValue(message, forKey: "location_message")
+        request.setPostValue(name, forKey: "location_name")
         
         request.startAsynchronous()
         

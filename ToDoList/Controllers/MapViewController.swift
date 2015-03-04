@@ -64,7 +64,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         } else {
             var centerLocation: CLLocationCoordinate2D = mapView.centerCoordinate
             
-//            UserLocationManager.userLocationManager.checkForLocationsNearBy(centerLocation.latitude, currentLongitude: centerLocation.longitude)
+            UserLocationManager.userLocationManager.checkForLocationsNearBy(centerLocation.latitude, currentLongitude: centerLocation.longitude)
         }
         
     }
@@ -94,7 +94,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     func showAlertView() -> Void {
         var alertView = UIAlertView(title: "Add location", message: "Please add location name", delegate: self, cancelButtonTitle: "Cancel", otherButtonTitles: "Add location")
         alertView.alertViewStyle = UIAlertViewStyle.PlainTextInput
-        alertView.textFieldAtIndex(0)?.placeholder = "Cellphone"
+        alertView.textFieldAtIndex(0)?.placeholder = "Location Name"
         alertView.show()
     }
     
